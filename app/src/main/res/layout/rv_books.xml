@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:id="@+id/diaFondo">
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:src="@drawable/librodiscipulo"
+        />
+    <TextView
+        android:id="@+id/título_lectura"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Loret"
+        android:textSize="20sp" />
+</LinearLayout>
