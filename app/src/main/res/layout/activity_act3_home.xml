@@ -8,14 +8,14 @@
 
     <!-- Logo -->
     <RelativeLayout
-        android:id="@+id/LogoLayoutTopBar"
+        android:id="@+id/act3HomeLogoLayoutTopBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/LogoImageView"
+            android:id="@+id/act3HomeLogoImageView"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
@@ -26,11 +26,11 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textSize="28sp"
-            android:layout_toRightOf="@+id/LogoImageView"
+            android:layout_toRightOf="@+id/act3HomeLogoImageView"
             android:typeface="normal" />
 
         <ImageView
-            android:id="@+id/TopBarSignOut"
+            android:id="@+id/act3HomeTopBarSignOut"
             style="@style/imageViewFooter"
             app:tint="@color/primary1"
             android:layout_weight="0"
@@ -40,6 +40,59 @@
             android:layout_alignParentRight="true"/>
 
     </RelativeLayout>
+
+
+
+
+    <!-- Aquí va el cuerpo del activity -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/act3HomeLogoLayoutTopBar">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/act3HomeRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                tools:listitem="@layout/rv_books"/>
+
+            <TextView
+                android:id="@+id/act3HomeTextview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Loret"
+                android:textSize="28sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/act3HomeRecyclerView2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                tools:listitem="@layout/rv_books"/>
+
+            <TextView
+                android:id="@+id/act3HomeTextview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="parent"
+                android:text="@string/Loret"
+                android:textSize="28sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/act3HomeRecyclerView3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                tools:listitem="@layout/rv_books"/>
+        </LinearLayout>
+    </ScrollView>
 
     <!-- Botón flotante -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -53,68 +106,15 @@
         android:src="@drawable/ic_search"
         app:fabSize="normal"
         android:backgroundTint="@color/primary2"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/act3HomeFooter"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
-
-
-    <!-- Aquí va el cuerpo del activity -->
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LogoLayoutTopBar">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal"
-                tools:listitem="@layout/rv_books"/>
-
-            <TextView
-                android:id="@+id/textview1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Loret"
-                android:textSize="28sp"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView2"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal"
-                tools:listitem="@layout/rv_books"/>
-
-            <TextView
-                android:id="@+id/textview2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="parent"
-                android:text="@string/Loret"
-                android:textSize="28sp"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView3"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal"
-                tools:listitem="@layout/rv_books"/>
-        </LinearLayout>
-    </ScrollView>
 
     <!-- Barra de navegación inferior -->
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/act3HomeFooter"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/black"
+        android:background="@color/primary1"
         android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +125,7 @@
         <ImageView
             style="@style/imageViewFooter"
             android:src="@drawable/ic_foot_home"
-            app:tint="@color/primary1" />
+            app:tint="@color/neutral1" />
 
         <ImageView
             style="@style/imageViewFooter"
