@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">ReadMe</string>
     <string name="Loret">Loret</string>
-    <string name="text_nombre">&#160;&#160;&#160;&#160;Nombre(s)</string>
-    <string name="text_apellido">Apellidos</string>
-    <string name="text_phone">Teléfono</string>
-    <string name="text_email">Correo electrónico</string>
+    <string name="lblRegistrarse">Registrarse</string>
+    <string name="text_name">&#160;&#160;&#160;&#160;Nombre</string>
+    <string name="text_user">&#160;&#160;&#160;&#160;Nombre de usuario</string>
+    <string name="text_email">&#160;&#160;&#160;&#160;Email</string>
+    <string name="text_password">&#160;&#160;&#160;&#160;Contraseña</string>
+    <string name="text_phone">&#160;&#160;&#160;&#160;Número de teléfono</string>
+    <string name="text_btnRegistrarse">&#160;&#160;&#160;&#160;Registrarse</string>
 </resources>

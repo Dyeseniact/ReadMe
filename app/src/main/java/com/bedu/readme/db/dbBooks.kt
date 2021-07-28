@@ -1,0 +1,48 @@
+package db
+
+import models.Book
+import models.countBook
+import models.listBook
+
+fun createDBBooks(){
+    listBook[countBook]= Book(countBook +1,"Drácula","Bram Stoker","Terror",450.24,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Frankesnstein","Mary Shelley","Terror",350.15,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Misery","Stephen King","Terror",420.3,10,true,0)
+    listBook[countBook]= Book(countBook +1,"Carrie","Stephen King","Terror",350.5,10,false,0)
+    listBook[countBook]= Book(countBook +1,"El gato Negro","Edgar Allan Poe","Terror",420.2,10,true,0)
+    listBook[countBook]= Book(countBook +1,"Vuelta de tuerca","Henry James","Terror",380.359,10,false,0)
+    listBook[countBook]= Book(countBook +1,"El fantasma de la ópera","Gastón Leroux","Terror",374.386,10,false,0)
+    listBook[countBook]= Book(countBook +1,"El exorcista","William Peter Blatty","Terror",368.413,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Entrevista con el vampiro","Anne Rice","Terror",362.44,10,true,0)
+    listBook[countBook]= Book(countBook +1,"Cementerio de animales","Stephen King","Terror",356.467,10,false,0)
+    listBook[countBook]= Book(countBook +1,"El marciano","Andy Weir","Ciencia Ficción",350.494,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Ready Player One ","Ernest Clin","Ciencia Ficción",344.521,10,true,0)
+    listBook[countBook]= Book(countBook +1,"World War Z","Max Brooks","Ciencia Ficción",338.548,10,false,0)
+    listBook[countBook]= Book(countBook +1,"American Gods","Neil Gaiman","Ciencia Ficción",332.575,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Desfiladero de la absolución","Alastair Reynolds","Ciencia Ficción",326.602,10,false,0)
+    listBook[countBook]= Book(countBook +1,"El jugador","Iain M. Banks","Ciencia Ficción",320.629,10,false,0)
+    listBook[countBook]= Book(countBook +1,"The Expanse","James S.A. Corey","Ciencia Ficción",314.656,10,true,0)
+    listBook[countBook]= Book(countBook +1,"Qualityland","Marc-Uwe Kling","Ciencia Ficción",308.683,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Las estrellas son legión","Kameron Hurley","Ciencia Ficción",302.71,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Embassytown: La Ciudad Embajada de ","China Mieville:","Ciencia Ficción",296.737,10,true,0)
+    listBook[countBook]= Book(countBook +1,"Orgullo y Prejuicio","Jane Austen","Romance",290.764,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Emma","Jane Austen","Romance",284.791,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Sentido y Sensibilidad","Jane Austen","Romance",278.818,10,false,0)
+    listBook[countBook]= Book(countBook +1,"La antigua magia","Lisa Kleypas","Romance",272.845,10,true,0)
+    listBook[countBook]= Book(countBook +1,"Tuya a Medianoche","Lisa Kleypas","Romance",266.872,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Tentación al Anochecer","Lisa Kleypas","Romance",260.899,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Secretos de una noche de verano","Lisa Kleypas","Romance",254.926,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Casarse con él","Lisa Kleypas","Romance",248.953,10,true,0)
+    listBook[countBook]= Book(countBook +1,"Una tentación para el Duque","Lorraine Heath","Romance",242.98,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Jane Eyre","Lorraine Heath","Romance",237.007,10,false,0)
+    listBook[countBook]= Book(countBook +1,"POEMA DE GILGAMESH","Autor anonimo","Historia",231.034,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Libro De Job","Autor anonimo","Historia",225.061,10,true,0)
+    listBook[countBook]= Book(countBook +1,"Las mil y una noches","Autor anonimo","Historia",219.088,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Saga de njal","Autor Anonimo","Historia",213.115,10,false,0)
+    listBook[countBook]= Book(countBook +1,"TODO SE DESMORONA", "CHINUA ACHEBE","Historia",207.142,10,true,0)
+    listBook[countBook]= Book(countBook +1,"CUENTOS INFANTILES", "HANS CHRISTIAN ANDERSEN","Historia",201.169,10,false,0)
+    listBook[countBook]= Book(countBook +1,"DIVINA COMEDIA", "DANTE ALIGHIERI","Historia",195.196,10,false,0)
+    listBook[countBook]= Book(countBook +1,"PAPÁ GORIOT", "HONORÉ DE BALZAC","Historia",189.223,10,false,0)
+    listBook[countBook]= Book(countBook +1,"MOLLOY", "SAMUEL BECKETT","Historia",183.25,10,false,0)
+    listBook[countBook]= Book(countBook +1,"Decameron", "GIOVANNI BOCCACCIO","Historia",177.277,10,false,0)
+}

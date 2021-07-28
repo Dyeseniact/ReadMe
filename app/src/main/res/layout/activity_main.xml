@@ -10,99 +10,112 @@
         android:id="@+id/imageView"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginBottom="6px"
+        android:layout_marginTop="45dp"
         android:scaleType="fitCenter"
         android:src="@drawable/logo"
-        app:layout_constraintBottom_toTopOf="@+id/registrarse"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/adorno"
+        android:layout_width="286dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="32dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/adorno"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistrarse"
+        app:layout_constraintVertical_bias="0.019" />
 
     <TextView
         android:id="@+id/registrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
         android:fontFamily="open_sans"
-        android:text="Registrarse"
+        android:text="@string/lblRegistrarse"
         android:textSize="34dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="267dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="32dp"
+        android:id="@+id/editTextName"
+        style="@style/editText"
+        android:layout_marginTop="34dp"
         android:background="@drawable/textview_redondo"
         android:ems="10"
-        android:hint="@string/text_nombre"
-        android:inputType="textPersonName"
+        android:hint="@string/text_name"
 
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrarse" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:id="@+id/editTextUserName"
+        style="@style/editText"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/textview_redondo"
         android:ems="10"
+        android:hint="@string/text_user"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        style="@style/editText"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/textview_redondo"
         android:ems="10"
+        android:hint="@string/text_email"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUserName" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        style="@style/editText"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/textview_redondo"
         android:ems="10"
+        android:hint="@string/text_password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
     <EditText
         android:id="@+id/editTextPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        style="@style/editText"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/textview_redondo"
         android:ems="10"
+        android:hint="@string/text_phone"
         android:inputType="phone"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="179dp"
-        android:layout_height="51dp"
-        android:layout_marginBottom="44dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/btnRegistrarse"
+        android:layout_width="251dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/text_btnRegistrarse"
+        android:background="@drawable/btn_redondo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
