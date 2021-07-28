@@ -34,14 +34,27 @@ class Act2_signin : AppCompatActivity() {
                 println("El nuevo usuario es: nombre: ${listUsr[countUsers]?.getName()} usuario: ${listUsr[countUsers]?.getUserName()} " +
                         "contraseña: ${listUsr[countUsers]?.getPassword() }  email: ${listUsr[countUsers]?.getEmail()}   ")
                 countUsers++
+                Toast.makeText(applicationContext, "Selecccionaste el coche", Toast.LENGTH_SHORT
+                ).show()
+                mensaje("¡Bienvenido a la comunidad!","Es lo que lees cuando no tienes que hacerlo, lo que determina lo que serás. -Oscar Wilde.")
+
             }else{
                 println("Debes de llenar todos los campos")
-
+                mensaje("¡Parece que algo ha faltado! :( ","Todos los campos son obligatorios")
             }
         }
 
 
 
+
+    }
+    private fun mensaje(title:String,message:String){
+        AlertDialog.Builder(this)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton("OK"){dialogInterface, which -> }
+            .create()
+            .show()
     }
 
 }
