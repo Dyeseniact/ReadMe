@@ -1,11 +1,13 @@
 package com.bedu.readme
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,9 +21,36 @@ class Act3_Home : AppCompatActivity() {
     private lateinit var recyclerTop : RecyclerView
     private lateinit var recyclerRecommend : RecyclerView
 
+    private lateinit var homeButton: ImageView
+    private lateinit var settingButton: ImageView
+    private lateinit var bookButton: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act3_home)
+
+        homeButton = findViewById(R.id.IVHome)
+        settingButton = findViewById(R.id.IVSettings)
+        bookButton = findViewById(R.id.IVBooks)
+
+        homeButton.setOnClickListener {
+            val intent = Intent(this,Act3_Home::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        settingButton.setOnClickListener {
+            val intent = Intent(this,Act5_Setting::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        bookButton.setOnClickListener {
+            val intent = Intent(this,Act4_mybook::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         createDBBooks()
         recyclerBookReading = findViewById(R.id.act3HomeRecyclerView)
         recyclerBookReading.adapter = RecyclerAdapter(listBook)
