@@ -116,14 +116,18 @@
             android:background="@color/material_on_primary_disabled"
             android:weightSum="3">
 
-            <ImageView style="@style/imageViewFooter" />
+            <ImageView
+                android:id="@+id/IVBooks"
+                style="@style/imageViewFooter" />
 
             <ImageView
+                android:id="@+id/IVHome"
                 style="@style/imageViewFooter"
                 android:src="@drawable/ic_foot_home"
                 app:tint="@color/primary1" />
 
             <ImageView
+                android:id="@+id/IVSettings"
                 style="@style/imageViewFooter"
                 android:src="@drawable/ic_foot_settings" />
 
