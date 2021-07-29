@@ -67,7 +67,7 @@
                 android:id="@+id/act3HomeTextview1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Loret"
+                android:text="@string/act3txv1"
                 android:textSize="28sp"/>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -82,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toStartOf="parent"
-                android:text="@string/Loret"
+                android:text="@string/act3txv2"
                 android:textSize="28sp"/>
 
             <androidx.recyclerview.widget.RecyclerView

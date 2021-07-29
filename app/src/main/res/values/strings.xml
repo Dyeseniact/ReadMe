@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ReadMe</string>
     <string name="Loret">Loret</string>
+    
+    <string name="act3txv1">Lo más buscados</string>
+    <string name="act3txv2">Te podría interesar</string>
 </resources>
