@@ -2,10 +2,11 @@
 <resources>
 
     <style name="imageViewFooter">
-        <item name="android:layout_width">32dp</item>
-        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_gravity">center</item>
+        <item name="android:tint">@color/neutral3</item>
         <item name="android:src">@drawable/ic_foot_readbook</item>
     </style>
 
@@ -16,6 +17,23 @@
         <item name="android:layout_height">48dp</item>
         <item name="android:paddingStart">18dp</item>
 
+    </style>
+
+    <style name="LogoTxV">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:typeface">normal</item>
+    </style>
+
+    <style name="TxvTitle1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/Loret</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

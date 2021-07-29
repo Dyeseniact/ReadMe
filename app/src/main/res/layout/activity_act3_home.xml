@@ -7,7 +7,8 @@
     tools:context=".Act3_Home">
 
     <!-- Logo -->
-    <RelativeLayout
+    <LinearLayout
+        android:layout_margin="8dp"
         android:id="@+id/act3HomeLogoLayoutTopBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,30 +17,17 @@
 
         <ImageView
             android:id="@+id/act3HomeLogoImageView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/logo" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="28sp"
+            style="@style/LogoTxV"
+            android:layout_gravity="center"
             android:layout_toRightOf="@+id/act3HomeLogoImageView"
-            android:typeface="normal" />
+             />
 
-        <ImageView
-            android:id="@+id/act3HomeTopBarSignOut"
-            style="@style/imageViewFooter"
-            app:tint="@color/primary1"
-            android:layout_weight="0"
-            android:src="@drawable/ic_logout"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:layout_alignParentRight="true"/>
-
-    </RelativeLayout>
+    </LinearLayout>
 
 
 
@@ -49,6 +37,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/act3HomeLogoLayoutTopBar">
         <LinearLayout
@@ -57,39 +46,39 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="10dp"
                 android:id="@+id/act3HomeRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:orientation="horizontal"
                 tools:listitem="@layout/rv_books"/>
 
             <TextView
                 android:id="@+id/act3HomeTextview1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/act3txv1"
-                android:textSize="28sp"/>
+                style="@style/TxvTitle1"
+                android:layout_marginTop="15dp"
+                android:text="@string/act3txv1"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/act3HomeRecyclerView2"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 tools:listitem="@layout/rv_books"/>
 
             <TextView
                 android:id="@+id/act3HomeTextview2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/TxvTitle1"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toStartOf="parent"
-                android:text="@string/act3txv2"
-                android:textSize="28sp"/>
+                android:text="@string/act3txv2"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/act3HomeRecyclerView3"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="horizontal"
+                android:layout_marginTop="10dp"
                 tools:listitem="@layout/rv_books"/>
         </LinearLayout>
     </ScrollView>
@@ -99,38 +88,47 @@
         android:id="@+id/act3HomeBottonSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_search"
+        android:backgroundTint="@color/primary2"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="20dp"
-        android:padding="50dp"
-        android:src="@drawable/ic_search"
-        app:fabSize="normal"
-        android:backgroundTint="@color/primary2"
         app:layout_constraintBottom_toTopOf="@+id/act3HomeFooter"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Barra de navegación inferior -->
     <LinearLayout
-        android:id="@+id/act3HomeFooter"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/primary1"
-        android:weightSum="3"
+        android:layout_height="wrap_content"
+        android:id="@+id/act3HomeFooter"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageView style="@style/imageViewFooter" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/neutral3"/>
 
-        <ImageView
-            style="@style/imageViewFooter"
-            android:src="@drawable/ic_foot_home"
-            app:tint="@color/neutral1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/material_on_primary_disabled"
+            android:weightSum="3">
 
-        <ImageView
-            style="@style/imageViewFooter"
-            android:src="@drawable/ic_foot_settings" />
+            <ImageView style="@style/imageViewFooter" />
 
+            <ImageView
+                style="@style/imageViewFooter"
+                android:src="@drawable/ic_foot_home"
+                app:tint="@color/primary1" />
+
+            <ImageView
+                style="@style/imageViewFooter"
+                android:src="@drawable/ic_foot_settings" />
+
+        </LinearLayout>
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
