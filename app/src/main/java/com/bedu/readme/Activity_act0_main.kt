@@ -21,7 +21,7 @@ class Activity_act0_main  : AppCompatActivity() {
 
 
         Handler().postDelayed({
-            startActivity(Intent(this, Act3_Home::class.java))
+            startActivity(Intent(this, Activity_act1_login::class.java))
             finish()
         }, 3000)
     }
