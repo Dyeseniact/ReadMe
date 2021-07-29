@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarThumbHorizontal="@drawable/ic_search"
+    tools:context=".Act3_Home">
+
+    <!-- Logo -->
+    <LinearLayout
+        android:id="@+id/act4HomeLogoLayoutTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/act4HomeLogoImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            style="@style/LogoTxV"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/act4HomeLogoImageView" />
+
+    </LinearLayout>
+
+
+    <!-- Aquí va el cuerpo del activity -->
+    <ImageView
+        android:id="@+id/act4_imageView"
+        android:layout_width="208dp"
+        android:layout_height="208dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.705"
+        app:srcCompat="@drawable/sleep_programmer" />
+
+    <TextView
+        android:id="@+id/act4_textViewOps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/error_app"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/act4_imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/act4_textViewOpsDescription"
+        android:layout_width="223dp"
+        android:layout_height="75dp"
+        android:text="@string/error_app_description"
+        app:layout_constraintBottom_toTopOf="@+id/act4_imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/act4_textViewOps"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <!-- Botón flotante -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/act4HomeBottonSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/primary2"
+        android:scrollbarTrackVertical="@drawable/ic_search"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toTopOf="@+id/act4BookFooter"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Barra de navegación inferior -->
+    <LinearLayout
+        android:id="@+id/act4BookFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/neutral3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/material_on_primary_disabled"
+            android:weightSum="3">
+
+            <ImageView
+                style="@style/imageViewFooter"
+                app:tint="@color/primary1" />
+
+            <ImageView
+                style="@style/imageViewFooter"
+                android:src="@drawable/ic_foot_home" />
+
+
+            <ImageView
+                style="@style/imageViewFooter"
+                android:src="@drawable/ic_foot_settings" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

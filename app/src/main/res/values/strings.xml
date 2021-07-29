@@ -12,6 +12,9 @@
     <string name="text_login">Login</string>
     <string name="text_noTienesCuenta">¿No tienes una cuenta?</string>
     <string name="text_crearCuenta">Crear cuenta</string>
+    <string name="error_app">Ops!</string>
+    <string name="error_app_description">Lo sentimos, esta pantalla no esta disponible. Estamos trabajando en ello...</string>
+
 
     <string name="act3txv1">Lo más buscados</string>
     <string name="act3txv2">Te podría interesar</string>
