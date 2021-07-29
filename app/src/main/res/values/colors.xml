@@ -21,7 +21,8 @@
 
     <color name="neutral1">#1A051D</color>
     <color name="neutral2">#3F3356</color>
-    <color name="neutral3">#D0C9D6</color>
+    <color name="neutral3">#C7C7C7</color>
+<!--    <color name="neutral3">#D0C9D6</color>-->
     <color name="neutral4">#ECE9F1</color>
     <color name="neutral5">#F7F5F9</color>
     <color name="neutral6">#FFFFFF</color>
