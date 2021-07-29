@@ -62,6 +62,8 @@
         android:layout_width="223dp"
         android:layout_height="75dp"
         android:text="@string/error_app_description"
+        android:fontFamily="@font/open_sans"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/act5_imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.537"
