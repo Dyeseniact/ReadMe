@@ -23,6 +23,6 @@ class Activity_act0_main  : AppCompatActivity() {
         Handler().postDelayed({
             startActivity(Intent(this, Act3_Home::class.java))
             finish()
-        }, 1500)
+        }, 3000)
     }
 }

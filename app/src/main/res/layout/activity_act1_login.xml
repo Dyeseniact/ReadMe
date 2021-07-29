@@ -20,7 +20,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/open_sans"
         android:text="@string/text_login"
         android:textSize="34sp"
@@ -28,4 +28,72 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/editTextEmailLogin"
+        style="@style/editText"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/textview_redondo"
+        android:ems="10"
+        android:hint="@string/text_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/editTextPasswordLogin"
+        style="@style/editText"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/textview_redondo"
+        android:ems="10"
+        android:hint="@string/text_password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailLogin" />
+
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="251dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_redondo"
+        android:text="@string/text_btnIngresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordLogin" />
+
+    <ImageView
+        android:id="@+id/adorno"
+        android:layout_width="286dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/adorno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
+
+    <TextView
+        android:id="@+id/textViewLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_noTienesCuenta"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adorno" />
+
+    <Button
+        android:id="@+id/buttonCrearCuentaLogin"
+        android:layout_width="175dp"
+        android:layout_height="33dp"
+        android:text="@string/text_crearCuenta"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLogin" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
