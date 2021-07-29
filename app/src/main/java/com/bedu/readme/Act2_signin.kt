@@ -1,9 +1,9 @@
 package com.bedu.readme
 
 import android.app.AlertDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.AdapterView
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -16,16 +16,12 @@ class Act2_signin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act2_signin)
 
-        createDBAdmins()
-        createDBBooks()
-        createDBArticle()
-        createDBMagazine()
         var name = findViewById<TextView>(R.id.editTextName)
         var userName = findViewById<TextView>(R.id.editTextUserName)
-        var email = findViewById<TextView>(R.id.editTextTextEmailAddress)
-        var password = findViewById<TextView>(R.id.editTextTextPassword)
+        var email = findViewById<TextView>(R.id.editTextEmailLogin)
+        var password = findViewById<TextView>(R.id.editTextPasswordLogin)
         var phone = findViewById<TextView>(R.id.editTextPhone)
-        var buttonRegistrar = findViewById<Button>(R.id.btnRegistrarse)
+        var buttonRegistrar = findViewById<Button>(R.id.btnIniciarSesion)
 
         buttonRegistrar.setOnClickListener {
             if( (name.text.toString()!="")  && (userName.text.toString()!="") &&   (email.text.toString()!="")   &&   (password.text.toString()!="")    &&
@@ -42,6 +38,11 @@ class Act2_signin : AppCompatActivity() {
                 println("Debes de llenar todos los campos")
                 mensaje("¡Parece que algo ha faltado! :( ","Todos los campos son obligatorios")
             }
+        }
+
+        val bundle = Bundle()
+        val intent = Intent(this,Act3_Home::class.java).apply{
+            intent.putExtra("hola",listUsr)
         }
 
 

@@ -19,15 +19,14 @@
         android:id="@+id/adorno"
         android:layout_width="286dp"
         android:layout_height="20dp"
-        android:layout_marginTop="32dp"
         android:scaleType="fitCenter"
         android:src="@drawable/adorno"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegistrarse"
-        app:layout_constraintVertical_bias="0.019" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion"
+        app:layout_constraintVertical_bias="0.444" />
 
     <TextView
         android:id="@+id/registrarse"
@@ -44,7 +43,7 @@
     <EditText
         android:id="@+id/editTextName"
         style="@style/editText"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/textview_redondo"
         android:ems="10"
         android:hint="@string/text_name"
@@ -57,7 +56,7 @@
     <EditText
         android:id="@+id/editTextUserName"
         style="@style/editText"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="14dp"
         android:background="@drawable/textview_redondo"
         android:ems="10"
         android:hint="@string/text_user"
@@ -67,9 +66,9 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editTextEmailLogin"
         style="@style/editText"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="14dp"
         android:background="@drawable/textview_redondo"
         android:ems="10"
         android:hint="@string/text_email"
@@ -79,41 +78,39 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextUserName" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/editTextPasswordLogin"
         style="@style/editText"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="14dp"
         android:background="@drawable/textview_redondo"
         android:ems="10"
         android:hint="@string/text_password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailLogin" />
 
     <EditText
         android:id="@+id/editTextPhone"
         style="@style/editText"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="14dp"
         android:background="@drawable/textview_redondo"
         android:ems="10"
         android:hint="@string/text_phone"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordLogin" />
 
     <Button
-        android:id="@+id/btnRegistrarse"
+        android:id="@+id/btnIniciarSesion"
         android:layout_width="251dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/text_btnRegistrarse"
+        android:layout_height="48dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/btn_redondo"
+        android:text="@string/text_btnRegistrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
-
-
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

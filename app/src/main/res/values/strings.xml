@@ -2,12 +2,16 @@
     <string name="app_name">ReadMe</string>
     <string name="Loret">Loret</string>
     <string name="lblRegistrarse">Registrarse</string>
-    <string name="text_name">&#160;&#160;&#160;&#160;Nombre</string>
-    <string name="text_user">&#160;&#160;&#160;&#160;Nombre de usuario</string>
-    <string name="text_email">&#160;&#160;&#160;&#160;Email</string>
-    <string name="text_password">&#160;&#160;&#160;&#160;Contraseña</string>
-    <string name="text_phone">&#160;&#160;&#160;&#160;Número de teléfono</string>
-    <string name="text_btnRegistrarse">&#160;&#160;&#160;&#160;Registrarse</string>
+    <string name="text_name">Nombre</string>
+    <string name="text_user">Nombre de usuario</string>
+    <string name="text_email">Email</string>
+    <string name="text_password">Contraseña</string>
+    <string name="text_phone">Número de teléfono</string>
+    <string name="text_btnRegistrarse">Registrarse</string>
+    <string name="text_btnIngresar">Ingresar</string>
+    <string name="text_login">Login</string>
+    <string name="text_noTienesCuenta">¿No tienes una cuenta?</string>
+    <string name="text_crearCuenta">Crear cuenta</string>
 
     <string name="act3txv1">Lo más buscados</string>
     <string name="act3txv2">Te podría interesar</string>
