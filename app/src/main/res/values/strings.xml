@@ -8,4 +8,7 @@
     <string name="text_password">&#160;&#160;&#160;&#160;Contraseña</string>
     <string name="text_phone">&#160;&#160;&#160;&#160;Número de teléfono</string>
     <string name="text_btnRegistrarse">&#160;&#160;&#160;&#160;Registrarse</string>
+
+    <string name="act3txv1">Lo más buscados</string>
+    <string name="act3txv2">Te podría interesar</string>
 </resources>

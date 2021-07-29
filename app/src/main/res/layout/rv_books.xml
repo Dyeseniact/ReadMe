@@ -12,7 +12,7 @@
         android:src="@drawable/librodiscipulo"
         />
     <TextView
-        android:id="@+id/título_lectura"
+        android:id="@+id/rv_title_lecture"
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
