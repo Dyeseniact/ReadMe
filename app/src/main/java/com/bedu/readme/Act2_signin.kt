@@ -31,11 +31,6 @@ class Act2_signin : AppCompatActivity() {
                         "contraseña: ${listUsr[countUsers]?.getPassword() }  email: ${listUsr[countUsers]?.getEmail()}   ")
                 countUsers++
                 mensaje("¡Bienvenido a la comunidad!","Es lo que lees cuando no tienes que hacerlo, lo que determina lo que serás. -Oscar Wilde.")
-                val intent = Intent(this,Act2_SelectsPreferredGenres::class.java).apply{
-
-                }
-
-                startActivity(intent)
             }else{
                 println("Debes de llenar todos los campos")
                 mensaje("¡Parece que algo ha faltado! :( ","Todos los campos son obligatorios")
@@ -55,7 +50,11 @@ class Act2_signin : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle(title)
             .setMessage(message)
-            .setPositiveButton("OK"){dialogInterface, which -> }
+            .setPositiveButton("OK"){dialogInterface, which ->
+                val intent = Intent(this,Act2_SelectsPreferredGenres::class.java)
+                startActivity(intent)
+                finish()
+            }
             .create()
             .show()
     }

@@ -8,7 +8,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 
 @Suppress("DEPRECATION")
-class Activity_act0_main  : AppCompatActivity() {
+class Act0_main  : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -35,6 +35,7 @@ class Activity_act1_login : AppCompatActivity() {
                     val intent = Intent(this,Act3_Home::class.java).apply{
                     }
                     startActivity(intent)
+                    finish()
                 }else{
                     mensaje("¡Parece que algo ha faltado! :( ","El usuario o la contraseña no son correctos")
                 }
@@ -47,6 +48,7 @@ class Activity_act1_login : AppCompatActivity() {
             val intent = Intent(this,Act2_signin::class.java).apply{
             }
             startActivity(intent)
+            finish()
         }
     }
     private fun mensaje(title:String,message:String){
