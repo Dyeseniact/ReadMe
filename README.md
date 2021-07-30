@@ -10,3 +10,6 @@ Link a Figma: https://www.figma.com/file/ijuOAfg1QbLLnkh3XLzPaS/ReadMe-Pantallas
 ### Credenciales para login
 Email: genaro@gmail.com
 Contraseña: 1234genaro
+
+### Bases del proyecto
+Documentación: https://docs.google.com/document/d/1HAIOhdTf23FnROBnaDLCuYn388j2RUrg4fD97l-wLdQ/edit?usp=sharing
