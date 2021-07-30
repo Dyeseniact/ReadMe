@@ -30,11 +30,5 @@ class Act4_mybook : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-        bookButton.setOnClickListener {
-            val intent = Intent(this,Act4_mybook::class.java)
-            startActivity(intent)
-            finish()
-        }
     }
 }

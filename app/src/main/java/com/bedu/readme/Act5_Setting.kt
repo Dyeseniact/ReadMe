@@ -25,12 +25,6 @@ class Act5_Setting : AppCompatActivity() {
             finish()
         }
 
-        settingButton.setOnClickListener {
-            val intent = Intent(this,Act5_Setting::class.java)
-            startActivity(intent)
-            finish()
-        }
-
         bookButton.setOnClickListener {
             val intent = Intent(this,Act4_mybook::class.java)
             startActivity(intent)

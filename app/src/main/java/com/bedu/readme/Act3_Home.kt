@@ -33,11 +33,6 @@ class Act3_Home : AppCompatActivity() {
         settingButton = findViewById(R.id.IVSettings)
         bookButton = findViewById(R.id.IVBooks)
 
-        homeButton.setOnClickListener {
-            val intent = Intent(this,Act3_Home::class.java)
-            startActivity(intent)
-            finish()
-        }
 
         settingButton.setOnClickListener {
             val intent = Intent(this,Act5_Setting::class.java)
@@ -51,7 +46,6 @@ class Act3_Home : AppCompatActivity() {
             finish()
         }
 
-        createDBBooks()
         recyclerBookReading = findViewById(R.id.act3HomeRecyclerView)
         recyclerBookReading.adapter = RecyclerAdapter(listBook)
         recyclerBookReading.setHasFixedSize(true)

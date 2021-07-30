@@ -15,11 +15,9 @@ class Act2_SelectsPreferredGenres : AppCompatActivity() {
         var button = findViewById<Button>(R.id.continuarGeneros)
 
         button.setOnClickListener {
-            val intent = Intent(this,Act3_Home::class.java).apply{
-
-            }
-
+            val intent = Intent(this,Act3_Home::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
