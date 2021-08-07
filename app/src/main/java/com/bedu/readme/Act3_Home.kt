@@ -1,5 +1,6 @@
 package com.bedu.readme
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,6 +26,10 @@ class Act3_Home : AppCompatActivity() {
     private lateinit var settingButton: ImageView
     private lateinit var bookButton: ImageView
 
+    private lateinit var btnSearch: ImageButton
+
+
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act3_home)
@@ -32,6 +37,8 @@ class Act3_Home : AppCompatActivity() {
         homeButton = findViewById(R.id.IVHome)
         settingButton = findViewById(R.id.IVSettings)
         bookButton = findViewById(R.id.IVBooks)
+
+        btnSearch = findViewById(R.id.act3HomeBottonSearch)
 
 
         settingButton.setOnClickListener {
@@ -42,6 +49,13 @@ class Act3_Home : AppCompatActivity() {
 
         bookButton.setOnClickListener {
             val intent = Intent(this,Act4_mybook::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
+        btnSearch.setOnClickListener {
+            val intent = Intent(this,Act2_SelectsPreferredGenres::class.java)
             startActivity(intent)
             finish()
         }
