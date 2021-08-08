@@ -27,12 +27,12 @@ class Activity_act1_login : AppCompatActivity() {
         var email = findViewById<EditText>(R.id.editText_email)
         var password = findViewById<EditText>(R.id.editText_password)
         var btnLogin = findViewById<Button>(R.id.btn_login)
-        var btnRegistrar = findViewById<Button>(R.id.btn_register)
+        var btnRegister = findViewById<Button>(R.id.btn_register)
 
         btnLogin.setOnClickListener {
 
             if ((email.text.trim().isNotEmpty()) && (password.text.trim().isNotEmpty())){
-                var loginAnswer = loginUser(email.text.toString(),password.text.toString())
+                var loginAnswer = login(email.text.toString(),password.text.toString())
                 if(loginAnswer == "ok"){
                     val intent = Intent(this,Act3_Home::class.java).apply{}
                     startActivity(intent)
@@ -50,34 +50,43 @@ class Activity_act1_login : AppCompatActivity() {
             }
         }
 
-        btnRegistrar.setOnClickListener {
-            val intent = Intent(this,Act2_signin::class.java).apply{
-            }
+        btnRegister.setOnClickListener {
+            val intent = Intent(this,Act2_signin::class.java).apply{}
             startActivity(intent)
             finish()
         }
     }
 
     private fun loginUser(email: String, password: String):String {
-        var emailAnswer = false
-        var passwordAnswer = false
+        var answer = ""
 
         for(i in 0..99) {
-            if (listUsr[i]?.getTypeAccount() == "user" && listUsr[i]?.getEmail() == email) {
-                emailAnswer = true
-            } else if (listUsr[i]?.getPassword() == password) {
-                passwordAnswer = true
+            if (listUsr[i]?.getTypeAccount() == "user" && listUsr[i]?.getEmail() == email && listUsr[i]?.getPassword() == password) {
+                answer = "ok"
+            } else if (listUsr[i]?.getTypeAccount() == "user" && listUsr[i]?.getEmail() == email && listUsr[i]?.getPassword() !== password) {
+                answer = "badPassword"
+            }else {
+                answer = "badUser"
             }
         }
 
-        if(emailAnswer && passwordAnswer){
-            return "ok"
-        }else if (emailAnswer && !passwordAnswer){
-            return "badPassword"
-        }else{
-            return "badUser"
-        }
+        return answer
     }
 
+    fun login(email: String, password: String): String{
+
+        for(i in 0..99){
+            if(listUsr[i]?.getTypeAccount()== "user" && listUsr[i]?.getEmail() == email){
+                if( listUsr[i]?.getPassword() == password){
+                    userLogin = listUsr[i]!!
+                    return "ok"
+                }else{
+                    return "badPassword"
+                    }
+                }
+
+        }
+        return "badUser"
+    }
 
 }

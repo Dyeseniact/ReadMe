@@ -16,34 +16,25 @@ class Act2_signin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act2_signin)
 
-        var name = findViewById<TextView>(R.id.editTextName)
-        var userName = findViewById<TextView>(R.id.editTextUserName)
-        var email = findViewById<TextView>(R.id.editTextEmailLogin)
-        var password = findViewById<TextView>(R.id.editTextPasswordLogin)
-        var phone = findViewById<TextView>(R.id.editTextPhone)
-        var buttonRegistrar = findViewById<Button>(R.id.btnIniciarSesion)
+        val name = findViewById<TextView>(R.id.editText_name_register)
+        val userName = findViewById<TextView>(R.id.editText_userName_register)
+        val email = findViewById<TextView>(R.id.editText_email_register)
+        val password = findViewById<TextView>(R.id.editText_password_register)
+        val phone = findViewById<TextView>(R.id.editText_phone_register)
+        val buttonRegistrar = findViewById<Button>(R.id.btn_register_user)
 
         buttonRegistrar.setOnClickListener {
-            if( (name.text.toString()!="")  && (userName.text.toString()!="") &&   (email.text.toString()!="")   &&   (password.text.toString()!="")    &&
-                (phone.text.toString()!="")){
+            if( (name.text.trim().isNotEmpty()) && (userName.text.trim().isNotEmpty()) && (email.text.trim().isNotEmpty()) && (password.text.trim().isNotEmpty()) && (phone.text.trim().isNotEmpty())){
                 listUsr[countUsers]= User(countUsers+1,name.text.toString(),userName.text.toString(),password.text.toString(),email.text.toString())
-                println("El nuevo usuario es: nombre: ${listUsr[countUsers]?.getName()} usuario: ${listUsr[countUsers]?.getUserName()} " +
-                        "contraseña: ${listUsr[countUsers]?.getPassword() }  email: ${listUsr[countUsers]?.getEmail()}   ")
                 countUsers++
                 mensaje("¡Bienvenido a la comunidad!","Es lo que lees cuando no tienes que hacerlo, lo que determina lo que serás. -Oscar Wilde.")
+                val intent = Intent(this,Act3_Home::class.java).apply{}
+                startActivity(intent)
+                finish()
             }else{
-                println("Debes de llenar todos los campos")
-                mensaje("¡Parece que algo ha faltado! :( ","Todos los campos son obligatorios")
+                Toast.makeText(this,"Error, debes de llenar todos los campos", Toast.LENGTH_LONG).show()
             }
         }
-
-        val bundle = Bundle()
-        val intent = Intent(this,Act3_Home::class.java).apply{
-            intent.putExtra("hola",listUsr)
-        }
-
-
-
 
     }
     private fun mensaje(title:String,message:String){

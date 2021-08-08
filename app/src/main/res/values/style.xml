@@ -13,6 +13,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textCursorDrawable">@color/primary1</item>
+        <item name="android:maxLines">1</item>
     </style>
 
     <style name="buttom_login">
@@ -26,7 +27,6 @@
     <style name="icon_arrow">
         <item name="android:layout_width">320dp</item>
         <item name="android:layout_height">16dp</item>
-        <item name="android:layout_marginTop">16dp</item>
         <item name="android:scaleType">fitCenter</item>
         <item name="android:src">@drawable/icon_arrow</item>
     </style>
@@ -72,4 +72,13 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="text_input_register">
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:layout_width">256dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
 </resources>

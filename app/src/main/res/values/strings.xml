@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ReadMe</string>
     <string name="Loret">Loret</string>
-    <string name="lblRegistrarse">Registrarse</string>
+    <string name="textView_register">Registrarse</string>
     <string name="text_name">Nombre</string>
     <string name="text_user">Nombre de usuario</string>
     <string name="text_email">Email</string>
