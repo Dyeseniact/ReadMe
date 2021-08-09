@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuShoppingCart"
+        android:icon="@drawable/ic_foot_readbook"
+        android:title="@string/navigaton_Text_myBooks" />
+
+    <item
+        android:id="@+id/menuShop"
+        android:icon="@drawable/ic_foot_home"
+        android:title="@string/navigaton_Text_home" />
+
+    <item
+        android:id="@+id/menuProfile"
+        android:icon="@drawable/ic_foot_settings"
+        android:title="@string/navigaton_Text_settings" />
+
+</menu>
