@@ -12,6 +12,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
+import androidx.viewpager2.widget.ViewPager2
+import com.bedu.readme.adapters.ViewPagerRecyclerAdapter
 import db.createDBBooks
 import models.Book
 import models.listBook
@@ -28,37 +32,34 @@ class Act3_Home : AppCompatActivity() {
 
     private lateinit var btnSearch: ImageButton
 
+    private lateinit var viewpager: ViewPager2
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act3_home)
 
-        homeButton = findViewById(R.id.IVHome)
-        settingButton = findViewById(R.id.IVSettings)
-        bookButton = findViewById(R.id.IVBooks)
+
 
         btnSearch = findViewById(R.id.act3HomeBottonSearch)
 
 
-        settingButton.setOnClickListener {
-            val intent = Intent(this,Act5_Setting::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        bookButton.setOnClickListener {
-            val intent = Intent(this,Act4_mybook::class.java)
-            startActivity(intent)
-            finish()
-        }
 
 
-        btnSearch.setOnClickListener {
-            val intent = Intent(this,Act2_SelectsPreferredGenres::class.java)
-            startActivity(intent)
-            finish()
-        }
+
+        createDBBooks()
+        viewpager =findViewById(R.id.act3HomeViewPagerBook)
+        viewpager.adapter = ViewPagerRecyclerAdapter(listBook)
+
+        viewpager.clipToPadding = false
+        viewpager.clipChildren = false
+        viewpager.offscreenPageLimit = 3
+        viewpager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+
+        val compositePageTransformer:CompositePageTransformer = CompositePageTransformer()
+        compositePageTransformer.addTransformer(MarginPageTransformer(40))
+        compositePageTransformer.addTransformer(MarginPageTransformer(60))
+        viewpager.setPageTransformer(compositePageTransformer)
 
         recyclerBookReading = findViewById(R.id.act3HomeRecyclerView)
         recyclerBookReading.adapter = RecyclerAdapter(listBook)

@@ -20,4 +20,8 @@
 
     <string name="act3txv1">Lo más buscados</string>
     <string name="act3txv2">Te podría interesar</string>
+
+    <string name="navigaton_Text_myBooks">Mis libros</string>
+    <string name="navigaton_Text_home">Tienda</string>
+    <string name="navigaton_Text_settings">Ajustes</string>
 </resources>
