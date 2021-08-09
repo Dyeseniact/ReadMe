@@ -79,6 +79,25 @@
         <item name="android:layout_width">256dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAlignment">center</item>
+    </style>
 
+    <style name="TextView_home">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+
+    <style name="Slider_home">
+        <item name="android:layout_height">320dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:paddingStart">56dp</item>
+        <item name="android:paddingEnd">56dp</item>
     </style>
 </resources>

@@ -14,7 +14,9 @@
     <string name="text_createAccount">Crea cuenta</string>
     <string name="error_app">Ops!</string>
     <string name="error_app_description">Lo sentimos, esta pantalla no esta disponible. Estamos trabajando en ello...</string>
-
+    <string name="text_book">Libros</string>
+    <string name="text_magazine">Revistas</string>
+    <string name="text_article">Artículos</string>
 
     <string name="act3txv1">Lo más buscados</string>
     <string name="act3txv2">Te podría interesar</string>
