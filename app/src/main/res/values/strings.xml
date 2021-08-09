@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ReadMe</string>
     <string name="Loret">Loret</string>
-    <string name="lblRegistrarse">Registrarse</string>
+    <string name="textView_register">Registrarse</string>
     <string name="text_name">Nombre</string>
     <string name="text_user">Nombre de usuario</string>
     <string name="text_email">Email</string>
@@ -10,11 +10,13 @@
     <string name="text_btnRegistrarse">Registrarse</string>
     <string name="text_btnIngresar">Ingresar</string>
     <string name="text_login">Login</string>
-    <string name="text_noTienesCuenta">¿No tienes una cuenta?</string>
-    <string name="text_crearCuenta">Crear cuenta</string>
+    <string name="text_Not_Account">¿No tienes una cuenta?</string>
+    <string name="text_createAccount">Crea cuenta</string>
     <string name="error_app">Ops!</string>
     <string name="error_app_description">Lo sentimos, esta pantalla no esta disponible. Estamos trabajando en ello...</string>
-
+    <string name="text_book">Libros</string>
+    <string name="text_magazine">Revistas</string>
+    <string name="text_article">Artículos</string>
 
     <string name="act3txv1">Lo más buscados</string>
     <string name="act3txv2">Te podría interesar</string>
