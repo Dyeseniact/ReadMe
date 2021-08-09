@@ -10,15 +10,19 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.bedu.readme.adapters.RecyclerAdapter
 import com.bedu.readme.adapters.ViewPagerRecyclerAdapter
 import db.createDBBooks
+import me.ibrahimsn.lib.SmoothBottomBar
 import models.Book
 import models.listBook
+import java.util.ArrayList
 
 class Act3_Home : AppCompatActivity() {
 
@@ -34,6 +38,8 @@ class Act3_Home : AppCompatActivity() {
 
     private lateinit var viewpager: ViewPager2
 
+    private lateinit var smoothBottomBar: SmoothBottomBar
+
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +48,20 @@ class Act3_Home : AppCompatActivity() {
 
 
         btnSearch = findViewById(R.id.act3HomeBottonSearch)
+
+        smoothBottomBar = findViewById(R.id.act3HomeFooter)
+
+
+        smoothBottomBar.setOnItemSelectedListener {
+            if(it == 0){
+                val intent = Intent(this,Act4_mybook::class.java)
+                startActivity(intent)
+                finish()
+            }
+            if (it ==2){
+                Toast.makeText(this,"Aquí ejecuto el menu de ajustes",Toast.LENGTH_SHORT).show()
+            }
+        }
 
 
 
@@ -56,57 +76,25 @@ class Act3_Home : AppCompatActivity() {
         viewpager.offscreenPageLimit = 3
         viewpager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
-        val compositePageTransformer:CompositePageTransformer = CompositePageTransformer()
-        compositePageTransformer.addTransformer(MarginPageTransformer(40))
-        compositePageTransformer.addTransformer(MarginPageTransformer(60))
-        viewpager.setPageTransformer(compositePageTransformer)
-
-        recyclerBookReading = findViewById(R.id.act3HomeRecyclerView)
-        recyclerBookReading.adapter = RecyclerAdapter(listBook)
-        recyclerBookReading.setHasFixedSize(true)
-        recyclerBookReading.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerBookReading.adapter = RecyclerAdapter(listBook)
+        // Define el espacio entre los slides
+        val bookTransformer = CompositePageTransformer()
+        bookTransformer.addTransformer(MarginPageTransformer(8))
+        bookTransformer.addTransformer { page, position ->
+            val r = 1 - Math.abs(position)
+            page.scaleY = 0.95f + r * 0.05f
+        }
+        viewpager.setPageTransformer(bookTransformer)
 
         recyclerTop = findViewById(R.id.act3HomeRecyclerView2)
-
         recyclerTop.adapter = RecyclerAdapter(listBook)
         recyclerTop.setHasFixedSize(true)
         recyclerTop.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerTop.adapter = RecyclerAdapter(listBook)
 
         recyclerRecommend = findViewById(R.id.act3HomeRecyclerView3)
-
         recyclerRecommend.adapter = RecyclerAdapter(listBook)
         recyclerRecommend.setHasFixedSize(true)
         recyclerRecommend.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerRecommend.adapter = RecyclerAdapter(listBook)
 
 
-    }
-}
-
-class RecyclerAdapter(val literature: Array<Book?>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
-
-    class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
-        val nameLitetarute = view.findViewById<TextView>(R.id.rv_title_lecture)
-
-        // función bind que recibe un objeto Contact y a partir de el genera un contact_item colocando la información en le layout
-        fun bind(name: String){
-            nameLitetarute.text = name
-        }
-    }
-
-    //Cuando no se puede reciclar, lo que hace es llamar al método para crear uno nuevo
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.rv_books, parent, false)
-        return ViewHolder(view)
-    }
-
-    override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
-        holder.bind(literature[position]!!.title)
-    }
-
-    override fun getItemCount(): Int {
-        return literature.size
     }
 }
