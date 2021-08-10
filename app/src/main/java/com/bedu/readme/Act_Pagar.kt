@@ -71,7 +71,7 @@ class Act_Pagar : AppCompatActivity() {
         btnCancel = findViewById(R.id.btn_cancelar)
 
 
-      //  txtcvv.isEnabled = false
+       // txtcvv.isEnabled = false
 
 
 
@@ -162,11 +162,16 @@ class Act_Pagar : AppCompatActivity() {
 
         btnPay.setOnClickListener {
 
-          if (tarjetaTrue==true && cvvTrue == true && yearTrue == true && monthTrue == true){
-                Toast.makeText(this,"Pago Exitoso. Y llevar a ventana de confirmacion", Toast.LENGTH_SHORT).show()
+          if (tarjetaTrue==true && cvvTrue == true && yearTrue == true && monthTrue == true ){
+              //Toast.makeText(this,"Pago Exitoso. Y llevar a ventana de confirmacion", Toast.LENGTH_SHORT).show()
+              val intent = Intent(this,Act_ConfirmarPago::class.java)
+              startActivity(intent)
+              finish()
+
             }else{
                 Toast.makeText(this,"Complete todos los campos. Y seguir en la view", Toast.LENGTH_SHORT).show()
-            }
+                tarjetaTrue==false && cvvTrue == false && yearTrue == false && monthTrue == false
+          }
         }
 
 
