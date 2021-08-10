@@ -30,9 +30,9 @@ class Act3_Home : AppCompatActivity() {
     private lateinit var recyclerTop : RecyclerView
     private lateinit var recyclerRecommend : RecyclerView
 
-    private lateinit var homeButton: ImageView
-    private lateinit var settingButton: ImageView
-    private lateinit var bookButton: ImageView
+//    private lateinit var homeButton: ImageView
+//    private lateinit var settingButton: ImageView
+//    private lateinit var bookButton: ImageView
 
     private lateinit var btnSearch: ImageButton
 
@@ -52,6 +52,14 @@ class Act3_Home : AppCompatActivity() {
         smoothBottomBar = findViewById(R.id.act3HomeFooter)
 
 
+
+        btnSearch.setOnClickListener {
+            val intent = Intent(this,Act_Pagar::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
         smoothBottomBar.setOnItemSelectedListener {
             if(it == 0){
                 //Agregar los cambios hacia las pantallas
@@ -64,7 +72,7 @@ class Act3_Home : AppCompatActivity() {
             if (it == 1){
                 Toast.makeText(this,"Aquí ejecuto Tienda",Toast.LENGTH_SHORT).show()
             }
-            if (it ==2){
+            if (it == 2){
                 Toast.makeText(this,"Aquí ejecuto el menu de ajustes",Toast.LENGTH_SHORT).show()
             }
         }
