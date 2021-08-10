@@ -170,7 +170,7 @@ class Act_Pagar : AppCompatActivity() {
 
             }else{
                 Toast.makeText(this,"Complete todos los campos. Y seguir en la view", Toast.LENGTH_SHORT).show()
-                tarjetaTrue==false && cvvTrue == false && yearTrue == false && monthTrue == false
+
           }
         }
 
