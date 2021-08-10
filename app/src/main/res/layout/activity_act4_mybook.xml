@@ -25,51 +25,14 @@
         <TextView
             style="@style/LogoTxV"
             android:layout_gravity="center"
-            android:layout_toRightOf="@+id/act4HomeLogoImageView" />
+            android:layout_toRightOf="@+id/act4HomeLogoImageView"
+            />
 
     </LinearLayout>
 
 
     <!-- Aquí va el cuerpo del activity -->
-    <ImageView
-        android:id="@+id/act4_imageView"
-        android:layout_width="208dp"
-        android:layout_height="208dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705"
-        app:srcCompat="@drawable/sleep_programmer_women" />
 
-    <TextView
-        android:id="@+id/act4_textViewOps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:fontFamily="@font/open_sans"
-        android:text="@string/error_app"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/act4_imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.297"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/act4_textViewOpsDescription"
-        android:layout_width="223dp"
-        android:layout_height="75dp"
-        android:text="@string/error_app_description"
-        android:fontFamily="@font/open_sans"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/act4_imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/act4_textViewOps"
-        app:layout_constraintVertical_bias="0.516" />
 
     <!-- Botón flotante -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
