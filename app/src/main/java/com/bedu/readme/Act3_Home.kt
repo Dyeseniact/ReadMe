@@ -54,14 +54,21 @@ class Act3_Home : AppCompatActivity() {
 
         smoothBottomBar.setOnItemSelectedListener {
             if(it == 0){
-                val intent = Intent(this,Act4_mybook::class.java)
-                startActivity(intent)
-                finish()
+                //Agregar los cambios hacia las pantallas
+
+//                val intent = Intent(this,Act4_mybook::class.java)
+//                startActivity(intent)
+//                finish()
+                Toast.makeText(this,"Aquí ejecuto Mis Libros",Toast.LENGTH_SHORT).show()
+            }
+            if (it == 1){
+                Toast.makeText(this,"Aquí ejecuto Tienda",Toast.LENGTH_SHORT).show()
             }
             if (it ==2){
                 Toast.makeText(this,"Aquí ejecuto el menu de ajustes",Toast.LENGTH_SHORT).show()
             }
         }
+
 
 
 

@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReadMe">
+        <activity android:name=".A0_Home_J"></activity>
         <activity android:name=".Act0_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,8 +25,7 @@
         <activity android:name=".Act3_Home">
         </activity>
         <activity android:name=".Act4_mybook" />
-        <activity android:name=".Act5_Setting" >
-        </activity>
+        <activity android:name=".Act5_Setting"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".Act_HomeNew" />
     </application>
