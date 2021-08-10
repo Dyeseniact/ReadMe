@@ -4,13 +4,14 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -38,7 +39,10 @@ class Act3_Home : AppCompatActivity() {
 
     private lateinit var viewpager: ViewPager2
 
-    private lateinit var smoothBottomBar: SmoothBottomBar
+    lateinit var appBar: Toolbar
+    lateinit var drawerLayout: DrawerLayout
+    lateinit var smoothBottomBar :SmoothBottomBar
+    lateinit var buttonAdjust :Button
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,19 +53,29 @@ class Act3_Home : AppCompatActivity() {
 
         btnSearch = findViewById(R.id.act3HomeBottonSearch)
 
+        drawerLayout = findViewById(R.id.drawer_layout)
         smoothBottomBar = findViewById(R.id.act3HomeFooter)
 
-
         smoothBottomBar.setOnItemSelectedListener {
-            if(it == 0){
-                val intent = Intent(this,Act4_mybook::class.java)
-                startActivity(intent)
-                finish()
-            }
-            if (it ==2){
-                Toast.makeText(this,"Aquí ejecuto el menu de ajustes",Toast.LENGTH_SHORT).show()
-            }
+             if(it == 0){
+                 val intent = Intent(this,Act4_mybook::class.java)
+                 startActivity(intent)
+                 finish()
+             }
+             if (it ==2){
+                 drawerLayout.openDrawer(Gravity.START)
+
+             }
+
+         }
+        if(!drawerLayout.isDrawerOpen(GravityCompat.START)){
+
+            println("hola")
+        }else{
+            drawerLayout.openDrawer(Gravity.LEFT)
+            println("adios")
         }
+
 
 
 

@@ -27,4 +27,11 @@
     <color name="neutral5">#F7F5F9</color>
     <color name="neutral6">#FFFFFF</color>
 
+    <color name="toolbarIconColor">#3F3356</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="productGridBackgroundColor">#FFFBFA</color>
+
 </resources>
