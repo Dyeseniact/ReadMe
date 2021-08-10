@@ -31,16 +31,15 @@
     </LinearLayout>
 
 
-
-
-
     <TextView
         android:id="@+id/txtConfirmacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pago Exitoso"
-        tools:layout_editor_absoluteX="164dp"
-        tools:layout_editor_absoluteY="356dp"
+        app:layout_constraintBottom_toBottomOf="@+id/act3HomeFooter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
 

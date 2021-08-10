@@ -1,15 +1,19 @@
 package com.bedu.readme
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import me.ibrahimsn.lib.SmoothBottomBar
 
 
 private lateinit var smoothBottomBar: SmoothBottomBar
-private lateinit var txtConfirmacion: TextView
+@SuppressLint("StaticFieldLeak")
+private lateinit var txtConfirm: TextView
 
 
 class Act_ConfirmarPago : AppCompatActivity() {
@@ -19,7 +23,7 @@ class Act_ConfirmarPago : AppCompatActivity() {
 
 
 
-        txtConfirmacion = findViewById(R.id.txtConfirmacion)
+        txtConfirm = findViewById(R.id.txtConfirmacion)
 
         smoothBottomBar = findViewById(R.id.act3HomeFooter)
 
@@ -37,10 +41,10 @@ class Act_ConfirmarPago : AppCompatActivity() {
                 Toast.makeText(this,"Aquí ejecuto Mis Libros", Toast.LENGTH_SHORT).show()
             }
             if (it == 1){
-                val intent = Intent(this,Act3_Home::class.java)
+//                Toast.makeText(this,"Aquí ejecuto Tienda", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, Act2_SelectsPreferredGenres::class.java)
                 startActivity(intent)
                 finish()
-                //Toast.makeText(this,"Aquí ejecuto Tienda", Toast.LENGTH_SHORT).show()
             }
             if (it == 2){
                 Toast.makeText(this,"Aquí ejecuto el menu de ajustes", Toast.LENGTH_SHORT).show()
@@ -50,7 +54,6 @@ class Act_ConfirmarPago : AppCompatActivity() {
 
 
 
-
-
     }
 }
+
