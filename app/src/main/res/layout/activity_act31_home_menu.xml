@@ -8,13 +8,85 @@
     tools:openDrawer="start"
     android:fitsSystemWindows="true"
     tools:context=".Act3_1_HomeMenu">
-    <include
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        layout="@layout/activity_act3_home">
 
-    </include>
-    <!--
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Act3_Home">
+
+        <!-- Logo -->
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:id="@+id/act3HomeLogoLayoutTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/act3HomeLogoImageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo" />
+
+            <TextView
+                style="@style/LogoTxV"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/act3HomeLogoImageView"
+                />
+
+        </LinearLayout>
+
+
+        <!-- Aquí va el cuerpo del activity -->
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="com.bedu.readme.main_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="517dp"
+            android:layout_above="@+id/act3HomeFooter"
+            android:layout_below="@+id/act3HomeLogoLayoutTopBar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="29dp" />
+
+
+        <!-- Botón flotante -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/act3HomeBottonSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"
+            android:backgroundTint="@color/neutral6"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_alignRight="@+id/act3HomeFooter"
+            android:layout_alignTop="@+id/act3HomeLogoLayoutTopBar"
+            />
+
+        <!-- Barra de navegación inferior-->
+        <me.ibrahimsn.lib.SmoothBottomBar
+            android:id="@+id/act3HomeFooter"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            app:iconSize="24dp"
+            app:iconTint="@color/neutral3"
+            app:iconTintActive="@color/primary1"
+            app:indicatorColor="#ECECEC"
+            app:indicatorRadius="40dp"
+            app:menu="@menu/navigation_menu"
+            app:textColor="@color/primary1"
+            app:textSize="16sp"
+            app:activeItem="1"
+            android:layout_alignParentBottom="true"/>
+
+
+    </RelativeLayout>
+
     <com.google.android.material.navigation.NavigationView
         app:headerLayout="@layout/drawer_header"
         android:id="@+id/nav_view"
@@ -22,5 +94,5 @@
         android:layout_height="match_parent"
         android:layout_width="wrap_content"
         app:menu="@menu/drawer_menu" />
--->
+
 </androidx.drawerlayout.widget.DrawerLayout>
