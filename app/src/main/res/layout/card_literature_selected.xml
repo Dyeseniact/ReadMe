@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="50dp"
+    app:cardCornerRadius="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/cardLiteratureSelectedImageBack"
+            android:src="@drawable/magazine1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#B2F5F7FA">
+
+            <ImageView
+                android:id="@+id/cardLiteratureSelectedImage"
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/magazine1"
+                android:layout_above="@+id/cardLiteratureSelectedTextTitle"/>
+
+            <TextView
+                android:layout_margin="10dp"
+                android:id="@+id/cardLiteratureSelectedTextTitle"
+                android:layout_above="@+id/cardLiteratureSelectedTextAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Loret"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                style="@style/TxvTitle1"
+                />
+
+            <TextView
+                android:id="@+id/cardLiteratureSelectedTextAuthor"
+                android:layout_above="@+id/cardLiteratureTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginHorizontal="10sp"
+                android:text="@string/Loret"/>
+
+            <TextView
+                android:layout_margin="10dp"
+                android:id="@+id/cardLiteratureTextDescription"
+                android:layout_above="@+id/cardLiteratureTextPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Loret_Ipsum" />
+
+            <TextView
+                android:layout_margin="10dp"
+                android:id="@+id/cardLiteratureTextPrice"
+                android:layout_above="@+id/cardLiteratureSelectedButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:text="@string/Loret" />
+
+            <LinearLayout
+                android:id="@+id/cardLiteratureSelectedButtons"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="30dp">
+
+                <Button
+                    android:id="@+id/cardLiteratureSelectedButtonBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_card_button_buy"
+                    />
+                <Button
+                    android:id="@+id/cardLiteratureSelectedButtonPreview"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_card_button_preview"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

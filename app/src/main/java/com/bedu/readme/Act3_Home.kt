@@ -2,15 +2,14 @@ package com.bedu.readme
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -18,11 +17,10 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.bedu.readme.adapters.RecyclerAdapter
 import com.bedu.readme.adapters.ViewPagerRecyclerAdapter
+import com.bedu.readme.models.LiteratureRV
 import db.createDBBooks
 import me.ibrahimsn.lib.SmoothBottomBar
-import models.Book
 import models.listBook
-import java.util.ArrayList
 
 class Act3_Home : AppCompatActivity() {
 
@@ -30,9 +28,9 @@ class Act3_Home : AppCompatActivity() {
     private lateinit var recyclerTop : RecyclerView
     private lateinit var recyclerRecommend : RecyclerView
 
-//    private lateinit var homeButton: ImageView
-//    private lateinit var settingButton: ImageView
-//    private lateinit var bookButton: ImageView
+    private lateinit var homeButton: ImageView
+    private lateinit var settingButton: ImageView
+    private lateinit var bookButton: ImageView
 
     private lateinit var btnSearch: ImageButton
 
@@ -40,6 +38,7 @@ class Act3_Home : AppCompatActivity() {
 
     private lateinit var smoothBottomBar: SmoothBottomBar
 
+    @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,27 +51,14 @@ class Act3_Home : AppCompatActivity() {
         smoothBottomBar = findViewById(R.id.act3HomeFooter)
 
 
-
-        btnSearch.setOnClickListener {
-            val intent = Intent(this,Act_Pagar::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-
         smoothBottomBar.setOnItemSelectedListener {
             if(it == 0){
-                //Agregar los cambios hacia las pantallas
-
-//                val intent = Intent(this,Act4_mybook::class.java)
-//                startActivity(intent)
-//                finish()
-                Toast.makeText(this,"Aquí ejecuto Mis Libros",Toast.LENGTH_SHORT).show()
+                val intent = Intent(this,Act4_MyBooks::class.java)
+                startActivity(intent)
+                overridePendingTransition(0, 0)
+                finish()
             }
-            if (it == 1){
-                Toast.makeText(this,"Aquí ejecuto Tienda",Toast.LENGTH_SHORT).show()
-            }
-            if (it == 2){
+            if (it ==2){
                 Toast.makeText(this,"Aquí ejecuto el menu de ajustes",Toast.LENGTH_SHORT).show()
             }
         }
@@ -81,10 +67,16 @@ class Act3_Home : AppCompatActivity() {
 
 
 
-
-        createDBBooks()
         viewpager =findViewById(R.id.act3HomeViewPagerBook)
-        viewpager.adapter = ViewPagerRecyclerAdapter(listBook)
+        val literature = arrayListOf<LiteratureRV>()
+        literature.add(LiteratureRV(listBook[0]!!.id,listBook[0]!!.title,listBook[0]!!.author, listBook[0]!!.genre, listBook[0]!!.price, "Book"))
+        literature.add(LiteratureRV(listBook[1]!!.id,listBook[1]!!.title,listBook[1]!!.author, listBook[1]!!.genre, listBook[1]!!.price, "Book"))
+        literature.add(LiteratureRV(listBook[2]!!.id,listBook[2]!!.title,listBook[2]!!.author, listBook[2]!!.genre, listBook[2]!!.price, "Book"))
+        literature.add(LiteratureRV(listBook[3]!!.id,listBook[3]!!.title,listBook[3]!!.author, listBook[3]!!.genre, listBook[3]!!.price, "Book"))
+        literature.add(LiteratureRV(listBook[4]!!.id,listBook[4]!!.title,listBook[4]!!.author, listBook[4]!!.genre, listBook[4]!!.price, "Book"))
+        literature.add(LiteratureRV(listBook[5]!!.id,listBook[5]!!.title,listBook[5]!!.author, listBook[5]!!.genre, listBook[5]!!.price, "Book"))
+        literature.add(LiteratureRV(listBook[6]!!.id,listBook[6]!!.title,listBook[6]!!.author, listBook[6]!!.genre, listBook[6]!!.price, "Book"))
+        viewpager.adapter = ViewPagerRecyclerAdapter(this, literature)
 
         viewpager.clipToPadding = false
         viewpager.clipChildren = false
@@ -101,12 +93,16 @@ class Act3_Home : AppCompatActivity() {
         viewpager.setPageTransformer(bookTransformer)
 
         recyclerTop = findViewById(R.id.act3HomeRecyclerView2)
-        recyclerTop.adapter = RecyclerAdapter(listBook)
+        recyclerTop.adapter = RecyclerAdapter(this, literature)
         recyclerTop.setHasFixedSize(true)
-        recyclerTop.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerTop.layoutManager = layoutManager
+
+        //val firstVisibleInListview: Int = layoutManager.findFirstVisibleItemPosition()
+
 
         recyclerRecommend = findViewById(R.id.act3HomeRecyclerView3)
-        recyclerRecommend.adapter = RecyclerAdapter(listBook)
+        recyclerRecommend.adapter = RecyclerAdapter(this,  literature)
         recyclerRecommend.setHasFixedSize(true)
         recyclerRecommend.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
