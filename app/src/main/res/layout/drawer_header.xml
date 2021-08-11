@@ -7,9 +7,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <ImageView
+        android:id="@+id/imageHeader"
         android:layout_width="72dp"
         android:layout_height="72dp"
-        android:src="@drawable/default_user" />
+        android:src="@drawable/default_user"
+        android:scaleType="fitCenter"/>
 
     <TextView
         android:id="@+id/userHeader"
