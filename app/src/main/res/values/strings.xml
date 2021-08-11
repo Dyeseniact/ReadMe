@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">ReadMe</string>
     <string name="Loret">Loret</string>
+    <string name="Loret_Ipsum">« Lorem ipsum dolor sit amet, consectetur adipisci elit,
+        sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
+        commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore
+        eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa
+        qui officia deserunt mollit anim id est laborum. »</string>
     <string name="textView_register">Registrarse</string>
     <string name="text_name">Nombre</string>
     <string name="text_user">Nombre de usuario</string>
@@ -14,14 +20,19 @@
     <string name="text_createAccount">Crea cuenta</string>
     <string name="error_app">Ops!</string>
     <string name="error_app_description">Lo sentimos, esta pantalla no esta disponible. Estamos trabajando en ello...</string>
-    <string name="text_book">Libros</string>
-    <string name="text_magazine">Revistas</string>
-    <string name="text_article">Artículos</string>
+    <string name="text_act4txv_recently">Leído recientemente</string>
+    <string name="text_act4txv_myLiterature">Mi bilioteca</string>
+    <string name="text_article">Mis artículos</string>
 
-    <string name="act3txv1">Lo más buscados</string>
-    <string name="act3txv2">Te podría interesar</string>
+    <string name="act3txv">Lo nuevo</string>
+    <string name="act3txv1">Te podría interesar</string>
+    <string name="act3txv2">Lo más buscados</string>
 
-    <string name="navigaton_Text_myBooks">Mis libros</string>
+    <string name="navigaton_Text_myLiterature">Biblioteca</string>
     <string name="navigaton_Text_home">Tienda</string>
     <string name="navigaton_Text_settings">Ajustes</string>
+
+    <!-- Variables Card_Literature_selected -->
+    <string name="text_card_button_buy">Comprar</string>
+    <string name="text_card_button_preview">Vista previa</string>
 </resources>
