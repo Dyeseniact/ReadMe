@@ -1,18 +1,36 @@
 package com.bedu.readme
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import me.ibrahimsn.lib.SmoothBottomBar
 import java.util.ArrayList
 
-class Act_HomeNew : AppCompatActivity() {
+class Act4_MyBooks : AppCompatActivity() {
+
+    private lateinit var smoothBottomBar: SmoothBottomBar
 
     override fun onCreate(saveWomenInstanceState: Bundle?) {
         super.onCreate(saveWomenInstanceState)
-        setContentView(R.layout.activity_home_new)
+        setContentView(R.layout.activity_act4_mybooks)
+
+        smoothBottomBar = findViewById(R.id.act4MyBooksFooter)
+
+        smoothBottomBar.setOnItemSelectedListener {
+            if(it == 1){
+                val intent = Intent(this,Act3_Home::class.java)
+                startActivity(intent)
+                finish()
+            }
+            if (it ==2){
+                Toast.makeText(this,"Aquí ejecuto el menu de ajustes", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         //Slider para libros
         val bookView = findViewById<ViewPager2>(R.id.slider_books)

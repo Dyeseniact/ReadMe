@@ -5,11 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,9 +17,7 @@ import com.bedu.readme.adapters.RecyclerAdapter
 import com.bedu.readme.adapters.ViewPagerRecyclerAdapter
 import db.createDBBooks
 import me.ibrahimsn.lib.SmoothBottomBar
-import models.Book
 import models.listBook
-import java.util.ArrayList
 
 class Act3_Home : AppCompatActivity() {
 
@@ -54,12 +49,14 @@ class Act3_Home : AppCompatActivity() {
 
         smoothBottomBar.setOnItemSelectedListener {
             if(it == 0){
-                val intent = Intent(this,Act4_mybook::class.java)
+                val intent = Intent(this,Act4_MyBooks::class.java)
                 startActivity(intent)
                 finish()
             }
             if (it ==2){
-                Toast.makeText(this,"Aquí ejecuto el menu de ajustes",Toast.LENGTH_SHORT).show()
+                //dialog("Título", "Ajuste", this)
+                diaglog(LayoutInflater.from(this), "El perrón", "Iván Marquez")
+                //Toast.makeText(this,"Aquí ejecuto el menu de ajustes",Toast.LENGTH_SHORT).show()
             }
         }
 
