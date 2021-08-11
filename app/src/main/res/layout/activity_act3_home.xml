@@ -49,12 +49,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/act3HomeLogoLayoutTopBar"
-        android:layout_margin="8dp"
+        android:layout_marginHorizontal="8dp"
         android:layout_above="@+id/act3HomeFooter">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/act3HomeTextview"
+                style="@style/TxvTitle1"
+                android:layout_marginTop="12dp"
+                android:textSize="32dp"
+                android:text="@string/act3txv"/>
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/act3HomeViewPagerBook"
@@ -74,12 +81,12 @@
                 android:layout_height="200dp"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
-                tools:listitem="@layout/rv_books"/>
+                tools:listitem="@layout/card_rv_book"/>
 
             <TextView
                 android:id="@+id/act3HomeTextview2"
                 style="@style/TxvTitle1"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toStartOf="parent"
                 android:text="@string/act3txv2"/>
 
@@ -89,7 +96,7 @@
                 android:layout_height="200dp"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
-                tools:listitem="@layout/rv_books"/>
+                tools:listitem="@layout/card_rv_book"/>
         </LinearLayout>
     </ScrollView>
 
@@ -107,6 +114,15 @@
         />
 
     <!-- Barra de navegación inferior-->
+
+    <LinearLayout
+        android:id="@+id/act4MyBooksSepartor"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/neutral3"
+        android:orientation="vertical"
+        android:layout_above="@+id/act3HomeFooter"/>
+
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/act3HomeFooter"
         android:layout_width="match_parent"
