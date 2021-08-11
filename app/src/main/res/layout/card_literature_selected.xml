@@ -56,10 +56,20 @@
             <TextView
                 android:layout_margin="10dp"
                 android:id="@+id/cardLiteratureTextDescription"
-                android:layout_above="@+id/cardLiteratureSelectedButtons"
+                android:layout_above="@+id/cardLiteratureTextPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Loret_Ipsum" />
+
+            <TextView
+                android:layout_margin="10dp"
+                android:id="@+id/cardLiteratureTextPrice"
+                android:layout_above="@+id/cardLiteratureSelectedButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:text="@string/Loret" />
 
             <LinearLayout
                 android:id="@+id/cardLiteratureSelectedButtons"
@@ -77,11 +87,11 @@
                     android:text="@string/text_card_button_buy"
                     />
                 <Button
-                    android:id="@+id/cardLiteratureSelectedButtonRent"
-                    android:layout_marginLeft="50dp"
+                    android:id="@+id/cardLiteratureSelectedButtonPreview"
+                    android:layout_marginLeft="40dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/text_card_button_rent"/>
+                    android:text="@string/text_card_button_preview"/>
 
             </LinearLayout>
 

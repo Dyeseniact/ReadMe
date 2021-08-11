@@ -20,18 +20,19 @@
     <string name="text_createAccount">Crea cuenta</string>
     <string name="error_app">Ops!</string>
     <string name="error_app_description">Lo sentimos, esta pantalla no esta disponible. Estamos trabajando en ello...</string>
-    <string name="text_book">Mis libros</string>
-    <string name="text_magazine">Mis revistas</string>
+    <string name="text_act4txv_recently">Leído recientemente</string>
+    <string name="text_act4txv_myLiterature">Mi bilioteca</string>
     <string name="text_article">Mis artículos</string>
 
-    <string name="act3txv1">Lo más buscados</string>
-    <string name="act3txv2">Te podría interesar</string>
+    <string name="act3txv">Lo nuevo</string>
+    <string name="act3txv1">Te podría interesar</string>
+    <string name="act3txv2">Lo más buscados</string>
 
-    <string name="navigaton_Text_myBooks">Mis libros</string>
+    <string name="navigaton_Text_myLiterature">Biblioteca</string>
     <string name="navigaton_Text_home">Tienda</string>
     <string name="navigaton_Text_settings">Ajustes</string>
 
     <!-- Variables Card_Literature_selected -->
     <string name="text_card_button_buy">Comprar</string>
-    <string name="text_card_button_rent">Rentar</string>
+    <string name="text_card_button_preview">Vista previa</string>
 </resources>

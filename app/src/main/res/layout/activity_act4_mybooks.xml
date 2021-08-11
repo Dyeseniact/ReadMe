@@ -44,7 +44,7 @@
                 android:id="@+id/textView_book"
                 style="@style/TextView_home"
                 android:layout_width="match_parent"
-                android:text="@string/text_book"
+                android:text="@string/text_act4txv_recently"
                 app:layout_constraintTop_toBottomOf="parent" />
 
             <androidx.viewpager2.widget.ViewPager2
@@ -59,34 +59,14 @@
                 android:id="@+id/textView_magazine"
                 style="@style/TextView_home"
                 android:layout_width="match_parent"
-                android:text="@string/text_magazine"
+                android:text="@string/text_act4txv_myLiterature"
                 app:layout_constraintTop_toBottomOf="@id/slider_books" />
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/slider_magazine"
-                style="@style/Slider_home"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/act4MyBooksRVMibiblioteca"
                 android:layout_width="match_parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_magazine" />
+                android:layout_height="wrap_content"/>
 
-
-            <TextView
-                android:id="@+id/textView_article"
-                style="@style/TextView_home"
-                android:layout_width="match_parent"
-                android:text="@string/text_article"
-                app:layout_constraintTop_toBottomOf="@id/slider_magazine" />
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/slider_article"
-                style="@style/Slider_home"
-                android:layout_width="match_parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_article" />
 
         </LinearLayout>
 

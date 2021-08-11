@@ -1,20 +1,34 @@
 package com.bedu.readme
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isGone
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.bedu.readme.adapters.RecyclerAdapter
+import com.bedu.readme.models.LiteratureRV
 import me.ibrahimsn.lib.SmoothBottomBar
+import models.listBook
 import java.util.ArrayList
 
 class Act4_MyBooks : AppCompatActivity() {
 
     private lateinit var smoothBottomBar: SmoothBottomBar
+    private lateinit var recyclerMiLiterature: RecyclerView
 
+    var flagOne = true
+
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(saveWomenInstanceState: Bundle?) {
         super.onCreate(saveWomenInstanceState)
         setContentView(R.layout.activity_act4_mybooks)
@@ -25,6 +39,7 @@ class Act4_MyBooks : AppCompatActivity() {
             if(it == 1){
                 val intent = Intent(this,Act3_Home::class.java)
                 startActivity(intent)
+                overridePendingTransition(0, 0)
                 finish()
             }
             if (it ==2){
@@ -33,6 +48,7 @@ class Act4_MyBooks : AppCompatActivity() {
         }
 
         //Slider para libros
+        val textBookView = findViewById<TextView>(R.id.textView_book)
         val bookView = findViewById<ViewPager2>(R.id.slider_books)
         val bookSlider: MutableList<HomeCard> = ArrayList()
 
@@ -71,81 +87,32 @@ class Act4_MyBooks : AppCompatActivity() {
         }
         bookView.setPageTransformer(bookTransformer)
 
-        // Slider para Revistas
-        val magazineView = findViewById<ViewPager2>(R.id.slider_magazine)
-        val magazineSlider: MutableList<HomeCard> = ArrayList()
+        val literature = arrayListOf<LiteratureRV>()
+        literature.add(LiteratureRV(listBook[0]!!.id, listBook[0]!!.title, listBook[0]!!.author, listBook[0]!!.genre, listBook[0]!!.price, "Book"))
+        literature.add(LiteratureRV(listBook[1]!!.id, listBook[1]!!.title, listBook[1]!!.author, listBook[1]!!.genre, listBook[1]!!.price, "Book"))
+        literature.add(LiteratureRV(listBook[2]!!.id, listBook[2]!!.title, listBook[2]!!.author, listBook[2]!!.genre, listBook[2]!!.price, "Book"))
+        literature.add(LiteratureRV(listBook[3]!!.id, listBook[3]!!.title, listBook[3]!!.author, listBook[3]!!.genre, listBook[3]!!.price, "Book"))
+        literature.add(LiteratureRV(listBook[4]!!.id, listBook[4]!!.title, listBook[4]!!.author, listBook[4]!!.genre, listBook[4]!!.price, "Book"))
+        literature.add(LiteratureRV(listBook[5]!!.id, listBook[5]!!.title, listBook[5]!!.author, listBook[5]!!.genre, listBook[5]!!.price, "Book"))
+        literature.add(LiteratureRV(listBook[6]!!.id, listBook[6]!!.title, listBook[6]!!.author, listBook[6]!!.genre, listBook[6]!!.price, "Book"))
 
-        val magazine1 = HomeCard()
-        magazine1.book_image = R.drawable.magazine1
-        magazine1.downloads = "50k "
-        magazineSlider.add(magazine1)
+        recyclerMiLiterature = findViewById(R.id.act4MyBooksRVMibiblioteca)
+        recyclerMiLiterature.adapter = RecyclerAdapter(this, literature)
+        recyclerMiLiterature.setHasFixedSize(true)
 
-        val magazine2 = HomeCard()
-        magazine2.book_image = R.drawable.magazine2
-        magazine2.downloads = "30k"
-        magazineSlider.add(magazine2)
+        recyclerMiLiterature.layoutManager = GridLayoutManager(this, 3, GridLayoutManager.VERTICAL,false)
 
-        val magazine3 = HomeCard()
-        magazine3.book_image = R.drawable.magazine3
-        magazine3.downloads = "20k"
-        magazineSlider.add(magazine3)
+        recyclerMiLiterature.setOnScrollChangeListener { view, scrollx, scrolly, oldScrollx, oldScrolly ->
+            if (  scrolly > oldScrolly && flagOne  ){
+                textBookView.visibility = View.GONE
+                bookView.visibility = View.GONE
+                flagOne = false
+            }
 
-        val magazine4 = HomeCard()
-        magazine4.book_image = R.drawable.magazine1
-        magazine4.downloads = "10k"
-        magazineSlider.add(magazine4)
-
-        magazineView.adapter = Act_HomeCardAdapter(magazineSlider)
-        magazineView.clipToPadding = false
-        magazineView.clipChildren = false
-        magazineView.offscreenPageLimit = 3
-        magazineView.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-
-        val compositeMenPageTransformer = CompositePageTransformer()
-        compositeMenPageTransformer.addTransformer(MarginPageTransformer(8))
-        compositeMenPageTransformer.addTransformer { page, position ->
-            val r = 1 - Math.abs(position)
-            page.scaleY = 0.95f + r * 0.05f
         }
-        magazineView.setPageTransformer(compositeMenPageTransformer)
 
-        //Slider para Artículos
-        val articleView = findViewById<ViewPager2>(R.id.slider_article)
-        val articleSlide: MutableList<HomeCard> = ArrayList()
 
-        val article1 = HomeCard()
-        article1.book_image = R.drawable.book1
-        article1.downloads = "100k"
-        articleSlide.add(article1)
 
-        val article2 = HomeCard()
-        article2.book_image = R.drawable.book1
-        article2.downloads = "90k"
-        articleSlide.add(article2)
-
-        val article3 = HomeCard()
-        article3.book_image = R.drawable.book1
-        article3.downloads = "80k"
-        articleSlide.add(article3)
-
-        val article4 = HomeCard()
-        article4.book_image = R.drawable.book1
-        article4.downloads = "70k"
-        articleSlide.add(article4)
-
-        articleView.adapter = Act_HomeCardAdapter(articleSlide)
-        articleView.clipToPadding = false
-        articleView.clipChildren = false
-        articleView.offscreenPageLimit = 3
-        articleView.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-
-        val compositeKidPageTransformer = CompositePageTransformer()
-        compositeKidPageTransformer.addTransformer(MarginPageTransformer(8))
-        compositeKidPageTransformer.addTransformer { page, position ->
-            val r = 1 - Math.abs(position)
-            page.scaleY = 0.95f + r * 0.05f
-        }
-        articleView.setPageTransformer(compositeKidPageTransformer)
     }
 
 }
