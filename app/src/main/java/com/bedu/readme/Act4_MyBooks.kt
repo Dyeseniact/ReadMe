@@ -5,12 +5,8 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-<<<<<<< HEAD
-import android.view.Gravity
 import android.view.Gravity
 import android.view.MenuItem
-=======
->>>>>>> origin/master
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -28,23 +24,17 @@ import com.bedu.readme.adapters.RecyclerAdapterShowBooksHorizontal
 import com.bedu.readme.adapters.ViewPagerShowBooksRecyclerAdapter
 import com.bedu.readme.models.myLiteratureCard
 import com.bedu.readme.models.LiteratureRV
-<<<<<<< HEAD
 import db.listUsr
 import com.google.android.material.navigation.NavigationView
 import db.listUsr
-=======
->>>>>>> origin/master
 import me.ibrahimsn.lib.SmoothBottomBar
 import models.listBook
 import java.util.ArrayList
 
-<<<<<<< HEAD
-class Act4_MyBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-=======
 lateinit var literatureOpen: LiteratureRV
+class Act4_MyBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-class Act4_MyBooks : AppCompatActivity() {
->>>>>>> origin/master
+
 
     private lateinit var smoothBottomBar: SmoothBottomBar
     private lateinit var recyclerMiLiterature: RecyclerView
