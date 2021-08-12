@@ -25,6 +25,7 @@
         <activity android:name=".Act2_SelectsPreferredGenres" />
         <activity android:name=".Act3_Home" />
         <activity android:name=".Act4_mybook" />
+        <activity android:name=".Act4_ReadBook"/>
         <activity android:name=".Act5_Setting" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Act4_MyBooks" />

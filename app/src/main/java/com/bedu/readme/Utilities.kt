@@ -1,5 +1,6 @@
 package com.bedu.readme
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -14,14 +15,12 @@ import androidx.appcompat.app.AlertDialog
 import com.bedu.readme.models.LiteratureRV
 import com.flaviofaria.kenburnsview.KenBurnsView
 import com.squareup.picasso.Picasso
-import db.countUsers
-import models.User
 import models.listArticle
 import models.listBook
 import models.listMagazine
 
 
-fun diaglog(context: Context, inflater: LayoutInflater, literature: LiteratureRV){
+fun diaglog(context: Context, activity: Activity, inflater: LayoutInflater, literature: LiteratureRV){
     //Para usarlo debes desplegarlo de la siguiente manera:
     //diaglog(layoutInflater,"Este es u título","Esta es su descripción")
     //la función necesita el layoutInfleter del principio para funcionar
@@ -42,6 +41,7 @@ fun diaglog(context: Context, inflater: LayoutInflater, literature: LiteratureRV
     textViewPrice.text = "$ ${literature.price}"
     if(literature.image != "" ){ Picasso.get().load(literature.image).into(imageView)  }
     if(literature.image != "" ){ Picasso.get().load(literature.image).into(imageBackground)  }
+    textViewPrice.text = "${literature.price}"
 
     //Creación del cuadro de diálogo
     val builder = AlertDialog.Builder(context)
@@ -50,8 +50,31 @@ fun diaglog(context: Context, inflater: LayoutInflater, literature: LiteratureRV
     alertDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
     //Acciones de los botones que afectan al cuadro de diálogo
-    buttonBuy.setOnClickListener{ showToast(context, "Preciono el botón comprar") }
-    buttonPreview.setOnClickListener { showToast(context, "Preciono el botón vista previa")}
+    buttonBuy.setOnClickListener{
+        val Compra = Bundle()
+//        val Precio = Bundle()
+
+       Compra.putString("Titulo",literature.title)
+       Compra.putString("Precio", "${literature.price}")
+
+        val intent = Intent(activity.applicationContext,Act_Pagar::class.java).apply {
+            putExtras(Compra)
+
+
+        }
+        activity.startActivity(intent)
+
+
+
+    }
+
+
+
+
+
+
+
+    buttonPreview.setOnClickListener { showToast(activity, "Preciono el botón vista previa")}
 
     alertDialog.show()
 }

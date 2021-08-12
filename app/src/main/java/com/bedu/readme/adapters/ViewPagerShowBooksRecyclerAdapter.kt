@@ -1,5 +1,6 @@
 package com.bedu.readme.adapters
 
+import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +14,8 @@ import com.bedu.readme.models.LiteratureRV
 import com.flaviofaria.kenburnsview.KenBurnsView
 import com.squareup.picasso.Picasso
 
-class ViewPagerRecyclerAdapter(val context:Context, val literature: ArrayList<LiteratureRV>): RecyclerView.Adapter<ViewPagerRecyclerAdapter.ViewHolder>() {
+class ViewPagerShowBooksRecyclerAdapter( val context: Context,
+    val activity: Activity, val literature: ArrayList<LiteratureRV>, var function: ((LiteratureRV: LiteratureRV) -> Unit)? = null): RecyclerView.Adapter<ViewPagerShowBooksRecyclerAdapter.ViewHolder>() {
 
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
         val name = view.findViewById<TextView>(R.id.cardBookTextBookName)
@@ -39,7 +41,13 @@ class ViewPagerRecyclerAdapter(val context:Context, val literature: ArrayList<Li
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         literature[position]?.let { holder.bind(it) }
 
-        holder.vistaClick.setOnClickListener { diaglog(context,LayoutInflater.from(context), literature[position])  }
+        holder.vistaClick.setOnClickListener {
+            if(!literature[position].read){
+                diaglog(context,activity,LayoutInflater.from(activity), literature[position])
+            }else{
+                function?.let { it1 -> it1(literature[position]) }
+            }
+        }
 
     }
 

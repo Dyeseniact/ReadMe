@@ -1,5 +1,6 @@
 package com.bedu.readme.adapters
 
+import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +14,9 @@ import com.bedu.readme.diaglog
 import com.bedu.readme.models.LiteratureRV
 import com.squareup.picasso.Picasso
 
-class RecyclerAdapter(val context: Context, val literature: ArrayList<LiteratureRV>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
+class RecyclerAdapterShowBooksHorizontal( val context: Context,
+    val activity: Activity, val literature: ArrayList<LiteratureRV>,
+    var function: ((LiteratureRV: LiteratureRV) -> Unit)? = null) : RecyclerView.Adapter<RecyclerAdapterShowBooksHorizontal.ViewHolder>(){
 
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
         val nameLiterature = view.findViewById<TextView>(R.id.rv_title_lecture)
@@ -30,15 +33,21 @@ class RecyclerAdapter(val context: Context, val literature: ArrayList<Literature
     }
 
     //Cuando no se puede reciclar, lo que hace es llamar al método para crear uno nuevo
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapterShowBooksHorizontal.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_rv_book, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerAdapterShowBooksHorizontal.ViewHolder, position: Int) {
         holder.bind(literature[position])
 
-        holder.vistaClick.setOnClickListener { diaglog(context,LayoutInflater.from(context), literature[position]) }
+        holder.vistaClick.setOnClickListener {
+            if(!literature[position].read){
+                diaglog(context, activity,LayoutInflater.from(activity), literature[position])
+            }else{
+                function?.let { it1 -> it1(literature[position]) }
+            }
+        }
 
     }
 
