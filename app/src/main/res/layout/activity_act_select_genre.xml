@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Act_SelectGenre"
+    android:orientation="vertical">
+
+    <!-- Logo -->
+    <LinearLayout
+        android:id="@+id/act3HomeLogoLayoutTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/act3HomeLogoImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            style="@style/LogoTxV"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/act3HomeLogoImageView" />
+
+    </LinearLayout>
+
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="76dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabFiccion"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:text="Ficción" />
+
+
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabNoFiccion"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:text="No ficción"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.viewpager.widget.ViewPager>
+
+
+
+
+
+</LinearLayout>
+
