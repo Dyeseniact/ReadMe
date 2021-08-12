@@ -3,6 +3,8 @@ package com.bedu.readme
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.view.Gravity
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -17,6 +19,7 @@ import com.bedu.readme.adapters.RecyclerAdapter
 import com.bedu.readme.adapters.myBooksCardAdapter
 import com.bedu.readme.models.myLiteratureCard
 import com.bedu.readme.models.LiteratureRV
+import db.listUsr
 import me.ibrahimsn.lib.SmoothBottomBar
 import models.listArticle
 import models.listBook
@@ -44,7 +47,10 @@ class Act4_MyBooks : AppCompatActivity() {
                 finish()
             }
             if (it ==2){
-                Toast.makeText(this,"Aquí ejecuto el menu de ajustes", Toast.LENGTH_SHORT).show()
+                Handler().postDelayed({
+                    smoothBottomBar.itemActiveIndex = 0
+                    Toast.makeText(this,"Aquí ejecuto el menu de ajustes", Toast.LENGTH_SHORT).show()
+                }, 200)
             }
         }
 

@@ -51,7 +51,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView_register"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:boxBackgroundColor="@color/neutral6"
+                app:boxBackgroundColor="@color/neutralBack"
                 >
 
                 <EditText
@@ -68,7 +68,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textInput_name"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:boxBackgroundColor="@color/neutral6"
+                app:boxBackgroundColor="@color/neutralBack"
                 >
 
                 <EditText
@@ -85,7 +85,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textInput_emailUpdate"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:boxBackgroundColor="@color/neutral6"
+                app:boxBackgroundColor="@color/neutralBack"
                 >
 
                 <EditText
@@ -103,7 +103,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textInput_user"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:boxBackgroundColor="@color/neutral6"
+                app:boxBackgroundColor="@color/neutralBack"
                 >
 
                 <EditText
@@ -121,7 +121,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textInput_password"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:boxBackgroundColor="@color/neutral6"
+                app:boxBackgroundColor="@color/neutralBack"
                 >
 
                 <EditText

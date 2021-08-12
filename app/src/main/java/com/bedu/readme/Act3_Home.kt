@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -27,6 +28,7 @@ import com.bedu.readme.adapters.RecyclerAdapter
 import com.bedu.readme.adapters.ViewPagerRecyclerAdapter
 import com.bedu.readme.models.LiteratureRV
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import db.listUsr
 import db.createDBBooks
 import db.listUsr
@@ -102,10 +104,13 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
                 finish()
             }
             if (it ==2){
-                drawerLayout.openDrawer(Gravity.START)
-                println("el user es ${listUsr[currentCount]?.userName} la cuenta va en $currentCount")
-                correo.text= listUsr[currentCount]?.getEmail()
-                name.text= listUsr[currentCount]?.userName
+                Handler().postDelayed({
+                    smoothBottomBar.itemActiveIndex = 1
+                    drawerLayout.openDrawer(Gravity.START)
+                    println("el user es ${listUsr[currentCount]?.userName} la cuenta va en $currentCount")
+                    correo.text= userLogin?.getEmail()
+                    name.text= userLogin?.userName
+                }, 200)
             }
         }
 
@@ -137,6 +142,10 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         val literatureGenres = literatureRecommend(userLogin)
         recyclerTop = findViewById(R.id.act3HomeRecyclerView2)
         selectGenreButton = findViewById(R.id.act3HomeButtonSelectGenred)
+        selectGenreButton.setOnClickListener {
+            val intent = Intent(this,Act2_SelectsPreferredGenres::class.java)
+            startActivity(intent)
+        }
         if(!literatureGenres.isEmpty()){
             recyclerTop.visibility = View.VISIBLE
             selectGenreButton.visibility = View.GONE
@@ -200,6 +209,7 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
             editor.clear().apply()
             val intent = Intent(this,Act1_login::class.java)
             startActivity(intent)
+            finish()
         }
         return false
     }

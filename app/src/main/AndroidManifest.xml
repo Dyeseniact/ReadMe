@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Act1_login" />
-        <activity android:name=".Act2_signin" />
+        <activity android:name=".Act2_Signin" />
         <activity android:name=".Act2_SelectsPreferredGenres" />
         <activity android:name=".Act3_Home" />
         <activity android:name=".Act4_mybook" />

@@ -83,9 +83,16 @@ fun returnMyPreferences(genresSelected:String): MutableSet<String> {
     val list = mutableSetOf<String>()
     if(!bus.isEmpty()){
         for (i in 0 until bus.size-1){
-            list.add(genresSelected.substring(bus[i]+2, bus[i+1] ))
+            if(genresSelected.substring(bus[i]+2, bus[i+1] ) != ""){
+                list.add(genresSelected.substring(bus[i]+2, bus[i+1] ))
+            }
+
         }
     }
     return list
 
+}
+
+fun isEmailValid(email: String): Boolean {
+    return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
 }
