@@ -135,11 +135,14 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
     //se implementa miembo de la clase para dar clic en el navigation view
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         if(item.itemId==R.id.nav_home){
-
-
             val intent = Intent(this,Act_userCount::class.java)
             startActivity(intent)
-            finish()
+
+        }
+        if(item.itemId==R.id.nav_payment){
+            val intent = Intent(this,Act_card::class.java)
+            startActivity(intent)
+
         }
         return false
     }

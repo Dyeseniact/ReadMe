@@ -21,6 +21,7 @@
     <string name="text_btnIngresar">Ingresar</string>
     <string name="text_btnUpdate">Actualizar</string>
     <string name="text_btnCancel">Cancelar</string>
+    <string name="text_btnGuardar">Guardar</string>
     <string name="text_login">Login</string>
     <string name="text_Not_Account">¿No tienes una cuenta?</string>
     <string name="text_createAccount">Crea cuenta</string>
@@ -62,4 +63,8 @@
 
     <string name="prueba">%1$s!</string>EditProfile
     <string name="EditProfile">Editar perfil</string>
+    <string name="text_card">Número de tarjeta</string>
+    <string name="text_dateCard">Expriación</string>
+    <string name="text_cvv">CVV</string>
+    <string name="text_nameCard">Nombre titular</string>
 </resources>

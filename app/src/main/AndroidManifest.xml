@@ -11,9 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReadMe">
-        <activity android:name=".Act_userCount" android:exported="true" >
+        <activity android:name=".Act_card" android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+    </activity>
+        <activity
+            android:name=".Act_userCount"
+            android:exported="true"></activity>
         <activity android:name=".Act_ConfirmarPago" />
         <activity android:name=".Act_Pagar" />
         <activity android:name=".Act0_main">
