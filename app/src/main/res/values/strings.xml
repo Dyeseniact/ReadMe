@@ -72,7 +72,11 @@
     <string name="text_cvv">CVV</string>
     <string name="text_nameCard">Nombre titular</string>
     <string name="version">Versión 1.0</string>
-    <string name="author">BEDU - Equipo 11   <br/>Erick<br />Genaro<br />Janner<br />Yess</string>
+    <string name="author">BEDU - Equipo 11</string>
+    <string name="authorEric">Eric</string>
+    <string name="authorGenaro">Genaro</string>
+    <string name="authorJanner">Janner</string>
+    <string name="authorYess">Yess</string>
     <string name="privacy">Legal and privacy<br/>End user license Agreement </string>
     <string name="textPrivacy"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s
         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a

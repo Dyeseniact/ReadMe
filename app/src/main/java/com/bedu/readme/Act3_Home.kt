@@ -49,8 +49,8 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
 
     private lateinit var smoothBottomBar: SmoothBottomBar
 
+    @SuppressLint("WrongConstant")
     @RequiresApi(Build.VERSION_CODES.M)
-    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act3_home)
@@ -165,30 +165,6 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
 
     }
 
-    //se implementa miembo de la clase para dar clic en el navigation view
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        if(item.itemId==R.id.nav_home){
-            val intent = Intent(this,Act_userCount::class.java)
-            startActivity(intent)
-
-        }
-        if(item.itemId==R.id.nav_payment){
-            val intent = Intent(this,Act_card::class.java)
-            startActivity(intent)
-
-        }
-
-        if(item.itemId==R.id.nav_about){
-            val intent = Intent(this,Act_acercaDe::class.java)
-            startActivity(intent)
-        }
-        if(item.itemId==R.id.nav_privacy){
-            val intent = Intent(this,Act_privacy::class.java)
-            startActivity(intent)
-        }
-        return false
-    }
-
     fun literatureRecommend(user: User) : ArrayList<LiteratureRV> {
 
         val literatureRecommend = arrayListOf<LiteratureRV>()
@@ -232,6 +208,30 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
             }
         }
         return literatureRecommend
+    }
+
+    //se implementa miembo de la clase para dar clic en el navigation view
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        if(item.itemId==R.id.nav_home){
+            val intent = Intent(this,Act_userCount::class.java)
+            startActivity(intent)
+
+        }
+        if(item.itemId==R.id.nav_payment){
+            val intent = Intent(this,Act_card::class.java)
+            startActivity(intent)
+
+        }
+
+        if(item.itemId==R.id.nav_about){
+            val intent = Intent(this,Act_acercaDe::class.java)
+            startActivity(intent)
+        }
+        if(item.itemId==R.id.nav_privacy){
+            val intent = Intent(this,Act_privacy::class.java)
+            startActivity(intent)
+        }
+        return false
     }
 
 }
