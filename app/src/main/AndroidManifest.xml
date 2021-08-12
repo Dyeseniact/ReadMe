@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_act1_login" />
+        <activity android:name=".Act1_login" />
         <activity android:name=".Act2_signin" />
         <activity android:name=".Act2_SelectsPreferredGenres" />
         <activity android:name=".Act3_Home" />

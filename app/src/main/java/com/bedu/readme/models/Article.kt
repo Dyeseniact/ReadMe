@@ -11,7 +11,8 @@ data class Article(
     override var discount: Int=0,
     private var namePublication: String="",
     private var yearPublication: Int=0,
-    private var monthPublication:String=""
+    private var monthPublication:String="",
+    var image: String = ""
 ):Product(){
     init {
         countArticle++

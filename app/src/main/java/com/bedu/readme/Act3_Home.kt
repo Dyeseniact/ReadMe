@@ -4,6 +4,12 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.Toast
 import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
@@ -21,6 +27,8 @@ import com.bedu.readme.adapters.ViewPagerRecyclerAdapter
 import com.bedu.readme.models.LiteratureRV
 import com.google.android.material.navigation.NavigationView
 import db.listUsr
+import db.createDBBooks
+import db.listUsr
 import me.ibrahimsn.lib.SmoothBottomBar
 import models.listBook
 
@@ -30,6 +38,8 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
     private lateinit var recyclerTop : RecyclerView
     private lateinit var recyclerRecommend : RecyclerView
 
+    private lateinit var selectGenreButton: Button
+
     private lateinit var homeButton: ImageView
     private lateinit var settingButton: ImageView
     private lateinit var bookButton: ImageView
@@ -38,6 +48,7 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
 
     private lateinit var viewpager: ViewPager2
 
+    private lateinit var smoothBottomBar: SmoothBottomBar
 
     @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ResourceType")
@@ -72,7 +83,7 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
 
         btnSearch = findViewById(R.id.act3HomeBottonSearch)
 
-        var smoothBottomBar = findViewById<SmoothBottomBar>(R.id.act3HomeFooter)
+        smoothBottomBar = findViewById(R.id.act3HomeFooter)
 
 
         smoothBottomBar.setOnItemSelectedListener {
@@ -91,15 +102,15 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         }
 
         viewpager =findViewById(R.id.act3HomeViewPagerBook)
-        val literature = arrayListOf<LiteratureRV>()
-        literature.add(LiteratureRV(listBook[0]!!.id,listBook[0]!!.title,listBook[0]!!.author, listBook[0]!!.genre, listBook[0]!!.price, "Book"))
-        literature.add(LiteratureRV(listBook[1]!!.id,listBook[1]!!.title,listBook[1]!!.author, listBook[1]!!.genre, listBook[1]!!.price, "Book"))
-        literature.add(LiteratureRV(listBook[2]!!.id,listBook[2]!!.title,listBook[2]!!.author, listBook[2]!!.genre, listBook[2]!!.price, "Book"))
-        literature.add(LiteratureRV(listBook[3]!!.id,listBook[3]!!.title,listBook[3]!!.author, listBook[3]!!.genre, listBook[3]!!.price, "Book"))
-        literature.add(LiteratureRV(listBook[4]!!.id,listBook[4]!!.title,listBook[4]!!.author, listBook[4]!!.genre, listBook[4]!!.price, "Book"))
-        literature.add(LiteratureRV(listBook[5]!!.id,listBook[5]!!.title,listBook[5]!!.author, listBook[5]!!.genre, listBook[5]!!.price, "Book"))
-        literature.add(LiteratureRV(listBook[6]!!.id,listBook[6]!!.title,listBook[6]!!.author, listBook[6]!!.genre, listBook[6]!!.price, "Book"))
-        viewpager.adapter = ViewPagerRecyclerAdapter(this, literature)
+        val literatureNew = arrayListOf<LiteratureRV>()
+
+        literatureNew.add(choseLiterature(0,0))
+        literatureNew.add(choseLiterature(10,0))
+        literatureNew.add(choseLiterature(2, 1))
+        literatureNew.add(choseLiterature(3,0))
+        literatureNew.add(choseLiterature(4, 2))
+
+        viewpager.adapter = ViewPagerRecyclerAdapter(this, literatureNew)
 
         viewpager.clipToPadding = false
         viewpager.clipChildren = false
@@ -115,17 +126,40 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         }
         viewpager.setPageTransformer(bookTransformer)
 
+        val literatureGenres = literatureRecommend(userLogin)
         recyclerTop = findViewById(R.id.act3HomeRecyclerView2)
-        recyclerTop.adapter = RecyclerAdapter(this, literature)
-        recyclerTop.setHasFixedSize(true)
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerTop.layoutManager = layoutManager
+        selectGenreButton = findViewById(R.id.act3HomeButtonSelectGenred)
+        if(!literatureGenres.isEmpty()){
+            recyclerTop.visibility = View.VISIBLE
+            selectGenreButton.visibility = View.GONE
+
+            recyclerTop.adapter = RecyclerAdapter(this, literatureGenres)
+            recyclerTop.setHasFixedSize(true)
+            val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            recyclerTop.layoutManager = layoutManager
+        }else{
+            recyclerTop.visibility = View.GONE
+            selectGenreButton.visibility = View.VISIBLE
+        }
 
         //val firstVisibleInListview: Int = layoutManager.findFirstVisibleItemPosition()
 
+        val literatureTop = arrayListOf<LiteratureRV>()
+
+        literatureTop.add(choseLiterature(2,0))
+        literatureTop.add(choseLiterature(4,0))
+        literatureTop.add(choseLiterature(8,0))
+        literatureTop.add(choseLiterature(12,0))
+        literatureTop.add(choseLiterature(16,0))
+        literatureTop.add(choseLiterature(20,0))
+        literatureTop.add(choseLiterature(24,0))
+        literatureTop.add(choseLiterature(28,0))
+        literatureTop.add(choseLiterature(32,0))
+        literatureTop.add(choseLiterature(36,0))
+
 
         recyclerRecommend = findViewById(R.id.act3HomeRecyclerView3)
-        recyclerRecommend.adapter = RecyclerAdapter(this,  literature)
+        recyclerRecommend.adapter = RecyclerAdapter(this,  literatureTop)
         recyclerRecommend.setHasFixedSize(true)
         recyclerRecommend.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
@@ -143,4 +177,50 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         }
         return false
     }
+
+    fun literatureRecommend(user: User) : ArrayList<LiteratureRV> {
+
+        val literatureRecommend = arrayListOf<LiteratureRV>()
+        for (i in 0 until 3){
+            if(!user.preferredGenre.isEmpty()){
+                val genresPreferdBooks = user.preferredGenre.elementAt(i)
+                if(!genresPreferdBooks.isEmpty()){
+                    when(i){
+                        0-> {
+                            val bookByGenresPreferd = mutableListOf<Book>()
+                            listBook.forEach { val book = it
+                                genresPreferdBooks.forEach { if (book?.genre == it) bookByGenresPreferd.add(book); return@forEach }
+                            }
+                            do{
+                                val libroAleatorio = bookByGenresPreferd[(0 until bookByGenresPreferd.size).random()]
+                                literatureRecommend.add( choseLiterature(libroAleatorio.id -1,0))
+                            }while(literatureRecommend.size < 4)
+                        }
+                        1 -> {
+                            val magazineByGenresPreferd = mutableListOf<Magazine>()
+                            listMagazine.forEach { val magazine = it
+                                genresPreferdBooks.forEach { if (magazine?.genre == it) magazineByGenresPreferd.add(magazine); return@forEach }
+                            }
+                            do{
+                                val revistaAleatoria = magazineByGenresPreferd[(0 until magazineByGenresPreferd.size).random()]
+                                literatureRecommend.add( choseLiterature(revistaAleatoria.id -1,1))
+                            }while(literatureRecommend.size < 5)
+                        }
+                        2 ->{
+                            val bookByGenresPreferd = mutableListOf<Article>()
+                            listArticle.forEach { val article = it
+                                genresPreferdBooks.forEach { if (article?.genre == it) bookByGenresPreferd.add(article); return@forEach }
+                            }
+                            do{
+                                val articuloAleatorio = bookByGenresPreferd[(0 until bookByGenresPreferd.size).random()]
+                                literatureRecommend.add( choseLiterature(articuloAleatorio.id -1,2))
+                            }while(literatureRecommend.size < 6)
+                        }
+                    }
+                }
+            }
+        }
+        return literatureRecommend
+    }
+
 }
