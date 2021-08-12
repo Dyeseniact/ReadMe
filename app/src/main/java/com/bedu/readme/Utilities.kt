@@ -1,6 +1,6 @@
 package com.bedu.readme
 
-import android.app.Application
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -12,19 +12,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat.startActivity
 import com.bedu.readme.models.LiteratureRV
 import com.flaviofaria.kenburnsview.KenBurnsView
 import com.squareup.picasso.Picasso
-import db.countUsers
-import models.User
 import models.listArticle
 import models.listBook
 import models.listMagazine
-import java.security.AccessController.getContext
 
 
-fun diaglog(context: Context, inflater: LayoutInflater, literature: LiteratureRV){
+fun diaglog(context: Context, activity: Activity, inflater: LayoutInflater, literature: LiteratureRV){
     //Para usarlo debes desplegarlo de la siguiente manera:
     //diaglog(layoutInflater,"Este es u título","Esta es su descripción")
     //la función necesita el layoutInfleter del principio para funcionar
@@ -61,12 +57,12 @@ fun diaglog(context: Context, inflater: LayoutInflater, literature: LiteratureRV
        Compra.putString("Titulo",literature.title)
        Compra.putString("Precio", "${literature.price}")
 
-        val intent = Intent(context,Act_Pagar::class.java).apply {
+        val intent = Intent(activity.applicationContext,Act_Pagar::class.java).apply {
             putExtras(Compra)
 
 
         }
-        context.applicationContext.startActivity(intent)
+        activity.startActivity(intent)
 
 
 
@@ -78,7 +74,7 @@ fun diaglog(context: Context, inflater: LayoutInflater, literature: LiteratureRV
 
 
 
-    buttonPreview.setOnClickListener { showToast(context, "Preciono el botón vista previa")}
+    buttonPreview.setOnClickListener { showToast(activity, "Preciono el botón vista previa")}
 
     alertDialog.show()
 }

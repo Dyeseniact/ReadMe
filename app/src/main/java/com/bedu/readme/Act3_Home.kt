@@ -7,12 +7,10 @@ import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.Toast
 import android.view.Gravity
 import android.view.MenuItem
 import android.widget.*
@@ -24,13 +22,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.bedu.readme.adapters.RecyclerAdapter
-import com.bedu.readme.adapters.ViewPagerRecyclerAdapter
+import com.bedu.readme.adapters.RecyclerAdapterShowBooksHorizontal
+import com.bedu.readme.adapters.ViewPagerShowBooksRecyclerAdapter
 import com.bedu.readme.models.LiteratureRV
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
-import db.listUsr
-import db.createDBBooks
 import db.listUsr
 import me.ibrahimsn.lib.SmoothBottomBar
 import models.*
@@ -123,7 +118,7 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         literatureNew.add(choseLiterature(3,0))
         literatureNew.add(choseLiterature(4, 2))
 
-        viewpager.adapter = ViewPagerRecyclerAdapter(this, literatureNew)
+        viewpager.adapter = ViewPagerShowBooksRecyclerAdapter(this, this, literatureNew)
 
         viewpager.clipToPadding = false
         viewpager.clipChildren = false
@@ -150,7 +145,7 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
             recyclerTop.visibility = View.VISIBLE
             selectGenreButton.visibility = View.GONE
 
-            recyclerTop.adapter = RecyclerAdapter(this, literatureGenres)
+            recyclerTop.adapter = RecyclerAdapterShowBooksHorizontal(this, this, literatureGenres)
             recyclerTop.setHasFixedSize(true)
             val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
             recyclerTop.layoutManager = layoutManager
@@ -176,7 +171,7 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
 
 
         recyclerRecommend = findViewById(R.id.act3HomeRecyclerView3)
-        recyclerRecommend.adapter = RecyclerAdapter(this,  literatureTop)
+        recyclerRecommend.adapter = RecyclerAdapterShowBooksHorizontal(this,  this, literatureTop)
         recyclerRecommend.setHasFixedSize(true)
         recyclerRecommend.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 

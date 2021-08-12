@@ -5,9 +5,12 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+<<<<<<< HEAD
 import android.view.Gravity
 import android.view.Gravity
 import android.view.MenuItem
+=======
+>>>>>>> origin/master
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -21,19 +24,27 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.bedu.readme.adapters.RecyclerAdapter
-import com.bedu.readme.adapters.myBooksCardAdapter
+import com.bedu.readme.adapters.RecyclerAdapterShowBooksHorizontal
+import com.bedu.readme.adapters.ViewPagerShowBooksRecyclerAdapter
 import com.bedu.readme.models.myLiteratureCard
 import com.bedu.readme.models.LiteratureRV
+<<<<<<< HEAD
 import db.listUsr
 import com.google.android.material.navigation.NavigationView
 import db.listUsr
+=======
+>>>>>>> origin/master
 import me.ibrahimsn.lib.SmoothBottomBar
-import models.listArticle
 import models.listBook
 import java.util.ArrayList
 
+<<<<<<< HEAD
 class Act4_MyBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+=======
+lateinit var literatureOpen: LiteratureRV
+
+class Act4_MyBooks : AppCompatActivity() {
+>>>>>>> origin/master
 
     private lateinit var smoothBottomBar: SmoothBottomBar
     private lateinit var recyclerMiLiterature: RecyclerView
@@ -96,29 +107,15 @@ class Act4_MyBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val bookView = findViewById<ViewPager2>(R.id.slider_books)
         val bookSlider: MutableList<myLiteratureCard> = ArrayList()
 
-        val book1 = myLiteratureCard()
-        //Picasso.get().load(R.drawable.librodiscipulo).into(this.book)
-        //https://i.redd.it/3mkuta0m4c351.png
-        book1.book_image2 = "https://i.redd.it/3mkuta0m4c351.png"
-        book1.downloads = "200k"
-        bookSlider.add(book1)
+        val literature = arrayListOf<LiteratureRV>()
+        for (i in 0 until 3){
+            val ip = i
+            val lit = listBook[ip]
+            literature.add(LiteratureRV(lit!!.id,lit.title,lit.author, lit.genre, lit.price, lit.image,"Book", true))
+        }
 
-        val book2 = myLiteratureCard()
-        book2.book_image = R.drawable.book2
-        book2.downloads = "150k"
-        bookSlider.add(book2)
 
-        val book3 = myLiteratureCard()
-        book3.book_image = R.drawable.librodiscipulo
-        book3.downloads = "140k"
-        bookSlider.add(book3)
-
-        val book4 = myLiteratureCard()
-        book4.book_image = R.drawable.book2
-        book4.downloads = "130k"
-        bookSlider.add(book4)
-
-        bookView.adapter = myBooksCardAdapter(bookSlider)
+        bookView.adapter = ViewPagerShowBooksRecyclerAdapter(this, this, literature, ::openBookToRead)
         bookView.clipToPadding = false
         bookView.clipChildren = false
         bookView.offscreenPageLimit = 3
@@ -133,14 +130,8 @@ class Act4_MyBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         bookView.setPageTransformer(bookTransformer)
 
-        val literature = arrayListOf<LiteratureRV>()
-        for (i in 0 until 3){
-            val ip = i
-            val lit = listBook[ip]
-            literature.add(LiteratureRV(lit!!.id,lit.title,lit.author, lit.genre, lit.price, lit.image,"Book"))
-        }
         recyclerMiLiterature = findViewById(R.id.act4MyBooksRVMibiblioteca)
-        recyclerMiLiterature.adapter = RecyclerAdapter(this, literature)
+        recyclerMiLiterature.adapter = RecyclerAdapterShowBooksHorizontal(this, this, literature, ::openBookToRead)
         recyclerMiLiterature.setHasFixedSize(true)
 
         recyclerMiLiterature.layoutManager = GridLayoutManager(this, 3, GridLayoutManager.VERTICAL,false)
@@ -160,9 +151,12 @@ class Act4_MyBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
         }
+    }
 
-
-
+    fun openBookToRead(literature:LiteratureRV? = null){
+        literatureOpen = literature!!
+        val intent = Intent(this,Act4_ReadBook::class.java)
+        startActivity(intent)
     }
 
 
