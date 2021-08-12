@@ -56,8 +56,8 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
     private lateinit var sharedPreferences : SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
 
+    @SuppressLint("WrongConstant")
     @RequiresApi(Build.VERSION_CODES.M)
-    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act3_home)
