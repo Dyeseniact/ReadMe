@@ -13,14 +13,14 @@
         android:theme="@style/Theme.ReadMe">
         <activity android:name=".Act_ConfirmarPago"></activity>
         <activity android:name=".Act_Pagar" />
-        <activity android:name=".Act0_main">
+        <activity android:name=".Act6_Search">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_act1_login" />
+        <activity android:name=".Act1_login" />
         <activity android:name=".Act2_signin" />
         <activity android:name=".Act2_SelectsPreferredGenres" />
         <activity android:name=".Act3_Home" />
@@ -28,6 +28,7 @@
         <activity android:name=".Act5_Setting" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Act4_MyBooks" />
+        <activity android:name=".Act_Recover_Password" />
     </application>
 
 </manifest>

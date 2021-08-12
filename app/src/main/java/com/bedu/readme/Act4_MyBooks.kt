@@ -23,7 +23,7 @@ import models.listBook
 import java.util.ArrayList
 
 class Act4_MyBooks : AppCompatActivity() {
-/*
+
     private lateinit var smoothBottomBar: SmoothBottomBar
     private lateinit var recyclerMiLiterature: RecyclerView
 
@@ -121,5 +121,5 @@ class Act4_MyBooks : AppCompatActivity() {
 
 
     }
-*/
+
 }

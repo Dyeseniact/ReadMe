@@ -4,8 +4,10 @@ package com.bedu.readme
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -41,6 +43,7 @@ class Act6_Search: AppCompatActivity(), ItemsAdapter.ClickListener {
         itemsAdapter = ItemsAdapter(this)
         itemsAdapter!!.setData(itemModalsList)
 
+        recyclerView = findViewById(R.id.recyclerView_search)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = itemsAdapter
@@ -59,6 +62,34 @@ class Act6_Search: AppCompatActivity(), ItemsAdapter.ClickListener {
                 Toast.makeText(this, "No actions", Toast.LENGTH_LONG).show()
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu_search: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.menu_search, menu_search)
+
+        val menuItem = menu_search!!.findItem(R.id.searchView)
+
+        val searchView = menuItem.actionView as SearchView
+
+        searchView.maxWidth = Int.MAX_VALUE
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(filterString: String?): Boolean {
+
+                itemsAdapter!!.filter.filter(filterString)
+                return true
+            }
+
+            override fun onQueryTextChange(filterString: String?): Boolean {
+
+                itemsAdapter!!.filter.filter(filterString)
+                return true
+            }
+
+        })
+
+        return true
     }
 
 

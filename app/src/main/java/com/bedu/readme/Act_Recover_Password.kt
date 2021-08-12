@@ -21,7 +21,7 @@ class Act_Recover_Password  : AppCompatActivity()  {
             if(email.text.trim().isNotEmpty()){
                 Toast.makeText(this,"Hemos enviado un correo con las intrucciones, para que puedas recuperar tu contraseña.", Toast.LENGTH_LONG).show()
                 Handler().postDelayed({
-                    startActivity(Intent(this, Activity_act1_login::class.java))
+                    startActivity(Intent(this, Act1_login::class.java))
                     finish()
                 }, 1500)
             }
