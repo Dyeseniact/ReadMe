@@ -1,7 +1,9 @@
 package com.bedu.readme
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -49,11 +51,18 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
 
     private lateinit var smoothBottomBar: SmoothBottomBar
 
+    private lateinit var sharedPreferences : SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
+
     @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act3_home)
+
+
+        sharedPreferences = getSharedPreferences("Preferencias", Context.MODE_PRIVATE)
+        editor = sharedPreferences.edit()
 
         //Se infla la vista
         var navigation = findViewById<NavigationView>(R.id.nav_view)
@@ -184,6 +193,12 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         }
         if(item.itemId==R.id.nav_privacy){
             val intent = Intent(this,Act_privacy::class.java)
+            startActivity(intent)
+        }
+        if(item.itemId==R.id.close_sesion){
+            showToast(this, "Nos vemos")
+            editor.clear().apply()
+            val intent = Intent(this,Act1_login::class.java)
             startActivity(intent)
         }
         return false
