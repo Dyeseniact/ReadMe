@@ -53,9 +53,8 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         var correo: TextView = viewNav.findViewById(R.id.emailHeader)
         var name:TextView = viewNav.findViewById(R.id.userHeader)
         var imagen:ImageView = viewNav.findViewById(R.id.imageHeader)
-        correo.text= listUsr[currentCount]?.getEmail()
-        name.text= listUsr[currentCount]?.getName()
-        print("la cuenta es: $currentCount")
+
+
         when(currentCount){
             0->imagen.setImageResource(R.drawable.erick)
             1->imagen.setImageResource(R.drawable.yess)
@@ -85,6 +84,9 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
             }
             if (it ==2){
                 drawerLayout.openDrawer(Gravity.START)
+                println("el user es ${listUsr[currentCount]?.userName} la cuenta va en $currentCount")
+                correo.text= listUsr[currentCount]?.getEmail()
+                name.text= listUsr[currentCount]?.userName
             }
         }
 
@@ -135,7 +137,7 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         if(item.itemId==R.id.nav_home){
 
 
-            val intent = Intent(this,Act4_mybook::class.java)
+            val intent = Intent(this,Act_userCount::class.java)
             startActivity(intent)
             finish()
         }

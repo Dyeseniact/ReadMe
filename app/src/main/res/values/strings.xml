@@ -19,6 +19,8 @@
     <string name="text_phone">Número de teléfono</string>
     <string name="text_btnRegistrarse">Registrarse</string>
     <string name="text_btnIngresar">Ingresar</string>
+    <string name="text_btnUpdate">Actualizar</string>
+    <string name="text_btnCancel">Cancelar</string>
     <string name="text_login">Login</string>
     <string name="text_Not_Account">¿No tienes una cuenta?</string>
     <string name="text_createAccount">Crea cuenta</string>
@@ -48,7 +50,7 @@
     <string name="sharing_element">Sharing element</string>
     <string name="user">Usuario</string>
     <string name="email">Correo electrónico</string>
-    <string name="drawer.home">Cuenta</string>
+    <string name="drawer.home">Editar perfil</string>
     <string name="drawer.account">Cuenta</string>
     <string name="drawer.payments">Pago</string>
     <string name="drawer.settings">Configuración</string>
@@ -58,5 +60,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment genaro</string>
 
-    <string name="prueba">%1$s!</string>
+    <string name="prueba">%1$s!</string>EditProfile
+    <string name="EditProfile">Editar perfil</string>
 </resources>
