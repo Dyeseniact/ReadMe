@@ -81,6 +81,12 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 tools:listitem="@layout/card_rv_book"/>
+            <Button
+                android:id="@+id/act3HomeButtonSelectGenred"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/act3Home_text_button_selectGenre"
+                android:visibility="gone"
+                style="@style/buttom"/>
 
             <TextView
                 android:id="@+id/act3HomeTextview2"
@@ -127,6 +133,7 @@
         android:layout_width="match_parent"
         android:layout_height="72dp"
         app:iconSize="24dp"
+        app:backgroundColor="@color/neutralBack"
         app:iconTint="@color/neutral3"
         app:iconTintActive="@color/primary1"
         app:indicatorColor="#ECECEC"

@@ -11,9 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReadMe">
-        <activity android:name=".Act_userCount" android:exported="true" >
-
-        </activity>
+        <activity
+            android:name=".Act_privacy"
+            android:exported="true" />
+        <activity
+            android:name=".Act_acercaDe"
+            android:exported="true" />
+        <activity
+            android:name=".Act_card"
+            android:exported="true" />
+        <activity
+            android:name=".Act_userCount"
+            android:exported="true" />
         <activity android:name=".Act_ConfirmarPago" />
         <activity android:name=".Act_Pagar" />
         <activity android:name=".Act0_main">
@@ -23,8 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_act1_login" />
-        <activity android:name=".Act2_signin" />
+        <activity android:name=".Act1_login" />
+        <activity android:name=".Act2_Signin" />
         <activity android:name=".Act2_SelectsPreferredGenres" />
         <activity android:name=".Act3_Home" />
         <activity android:name=".Act4_mybook" />

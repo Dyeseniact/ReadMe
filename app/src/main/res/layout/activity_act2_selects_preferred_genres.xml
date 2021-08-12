@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Act2_signin">
+    tools:context=".Act2_Signin">
 
 
     <ImageView
@@ -24,7 +24,7 @@
         android:layout_width="402dp"
         android:layout_height="622dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="5dp">
 

@@ -132,7 +132,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnUpdate"
-        style="@style/buttom_login"
+        style="@style/buttom"
         android:text="@string/text_btnUpdate"
         app:cornerRadius="4dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -142,7 +142,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_cancelar"
-        style="@style/buttom_login"
+        style="@style/buttom"
 
         android:layout_width="212dp"
         android:layout_height="39dp"

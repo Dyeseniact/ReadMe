@@ -15,17 +15,14 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat.startActivity
 import com.bedu.readme.models.LiteratureRV
 import com.flaviofaria.kenburnsview.KenBurnsView
+import com.squareup.picasso.Picasso
+import db.countUsers
+import models.User
+import models.listArticle
+import models.listBook
+import models.listMagazine
 import java.security.AccessController.getContext
 
-
-fun Context.dialog(title:String,message:String, context: Context){
-    AlertDialog.Builder(context)
-        .setTitle(title)
-        .setMessage(message)
-        .setPositiveButton("OK"){dialogInterface, which -> }
-        .create()
-        .show()
-}
 
 fun diaglog(context: Context, inflater: LayoutInflater, literature: LiteratureRV){
     //Para usarlo debes desplegarlo de la siguiente manera:
@@ -45,6 +42,9 @@ fun diaglog(context: Context, inflater: LayoutInflater, literature: LiteratureRV
     //Modificaci[on de los componentes
     textViewTitle.text = literature.title
     textViewAuthor.text = literature.author
+    textViewPrice.text = "$ ${literature.price}"
+    if(literature.image != "" ){ Picasso.get().load(literature.image).into(imageView)  }
+    if(literature.image != "" ){ Picasso.get().load(literature.image).into(imageBackground)  }
     textViewPrice.text = "${literature.price}"
 
     //Creación del cuadro de diálogo
@@ -52,12 +52,6 @@ fun diaglog(context: Context, inflater: LayoutInflater, literature: LiteratureRV
     builder.setView(ventana)
     val alertDialog = builder.create()
     alertDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-
-
-
-
-
 
     //Acciones de los botones que afectan al cuadro de diálogo
     buttonBuy.setOnClickListener{
@@ -90,7 +84,42 @@ fun diaglog(context: Context, inflater: LayoutInflater, literature: LiteratureRV
 }
 
 
-
 fun showToast(context: Context, text:String){
     Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
+}
+
+fun choseLiterature( numLiterature: Int , type: Int): LiteratureRV {
+    when( type ){
+        0 -> {
+            val lit = listBook[numLiterature]
+            return LiteratureRV(lit!!.id,lit.title,lit.author, lit.genre, lit.price, lit.image,"Book")
+        }
+        1 -> {
+            val lit = listMagazine[numLiterature];
+            return LiteratureRV(lit!!.id,lit.title,lit.author, lit.genre, lit.price, lit.image,"Magazine")
+        }
+        else -> {
+            val lit = listArticle[numLiterature];
+            return LiteratureRV(lit!!.id,lit.title,lit.author, lit.genre, lit.price, lit.image,"Articule")
+        }
+    }
+}
+
+fun returnMyPreferences(genresSelected:String): MutableSet<String> {
+    val bus = arrayListOf<Int>(); for(x in 0 until genresSelected.length){ if(genresSelected.substring(x,x+1)==","){ bus.add(x) } }
+    val list = mutableSetOf<String>()
+    if(!bus.isEmpty()){
+        for (i in 0 until bus.size-1){
+            if(genresSelected.substring(bus[i]+2, bus[i+1] ) != ""){
+                list.add(genresSelected.substring(bus[i]+2, bus[i+1] ))
+            }
+
+        }
+    }
+    return list
+
+}
+
+fun isEmailValid(email: String): Boolean {
+    return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
 }

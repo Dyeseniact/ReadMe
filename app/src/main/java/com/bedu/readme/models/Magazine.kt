@@ -10,7 +10,8 @@ data class Magazine (
     override var favorite: Boolean=false,
     override var discount: Int=0,
     private var Month:String,
-    private var Year:Int
+    private var Year:Int,
+    var image: String = ""
 ):Product(){
     init {
         countMagazine++

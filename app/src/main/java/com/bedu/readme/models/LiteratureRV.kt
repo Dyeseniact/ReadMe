@@ -6,5 +6,7 @@ class LiteratureRV(
     var author: String,
     var genre: String,
     var price: Double,
-    var typeLiteraure: String
+    var image: String = "",
+    var typeLiteraure: String,
+
 )
