@@ -70,7 +70,19 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         //aqui comenzaria la parte de la barra en donde el engrane despliega el menu
 
 
-        btnSearch = findViewById(R.id.act3HomeBottonSearch)
+//Aun por implementar el boton de buscar....
+
+//        btnSearch.setOnClickListener {
+//            val intent = Intent(this,Act_Find::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
+
+
+
+
+
+
 
         var smoothBottomBar = findViewById<SmoothBottomBar>(R.id.act3HomeFooter)
 

@@ -10,7 +10,6 @@
     <color name="gray">#7A7A7A</color>
 
 
-
     <color name="primary1">#0084F4</color>
     <color name="primary2">#66B5F8</color>
     <color name="primary3">#D5E9FA</color>
@@ -22,7 +21,7 @@
     <color name="neutral1">#1A051D</color>
     <color name="neutral2">#3F3356</color>
     <color name="neutral3">#C7C7C7</color>
-<!--    <color name="neutral3">#D0C9D6</color>-->
+    <!--    <color name="neutral3">#D0C9D6</color>-->
     <color name="neutral4">#ECE9F1</color>
     <color name="neutral5">#F7F5F9</color>
     <color name="neutral6">#FFFFFF</color>
@@ -33,5 +32,10 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFBFA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
 
 </resources>
