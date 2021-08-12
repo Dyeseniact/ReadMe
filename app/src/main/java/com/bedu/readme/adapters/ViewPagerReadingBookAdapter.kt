@@ -9,10 +9,9 @@ import com.bedu.readme.models.myLiteratureCard
 import com.bedu.readme.R
 import com.flaviofaria.kenburnsview.KenBurnsView
 import com.squareup.picasso.Picasso
-import com.bedu.readme.adapters.myBooksCardAdapter.CardViewHolder
 
-class myBooksCardAdapter(private val cardAdapter: MutableList<myLiteratureCard>) :
-    RecyclerView.Adapter<CardViewHolder>() {
+class ViewPagerReadingBookAdapter(private val cardAdapter: MutableList<myLiteratureCard>) :
+    RecyclerView.Adapter<ViewPagerReadingBookAdapter.CardViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         return CardViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.activity_cards_home, parent, false))
     }

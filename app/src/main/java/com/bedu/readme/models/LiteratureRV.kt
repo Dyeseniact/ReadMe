@@ -8,5 +8,5 @@ class LiteratureRV(
     var price: Double,
     var image: String = "",
     var typeLiteraure: String,
-
+    var read: Boolean = false,
 )
