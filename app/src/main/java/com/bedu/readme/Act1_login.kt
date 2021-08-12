@@ -18,8 +18,6 @@ var selection = 100
 lateinit var currentUser: String
 lateinit var currentEmail: String
 var currentCount: Int=0
-class Activity_act1_login : AppCompatActivity() {
-
 class Act1_login : AppCompatActivity() {
     private lateinit var sharedPreferences : SharedPreferences
     private lateinit var editor: SharedPreferences.Editor

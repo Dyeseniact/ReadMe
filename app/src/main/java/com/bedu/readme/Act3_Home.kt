@@ -12,7 +12,6 @@ import android.widget.ImageView
 import android.widget.Toast
 import android.view.Gravity
 import android.view.MenuItem
-import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +29,7 @@ import db.listUsr
 import db.createDBBooks
 import db.listUsr
 import me.ibrahimsn.lib.SmoothBottomBar
-import models.listBook
+import models.*
 
 class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
