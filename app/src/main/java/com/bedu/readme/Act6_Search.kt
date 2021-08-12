@@ -4,6 +4,7 @@ package com.bedu.readme
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -54,6 +55,9 @@ class Act6_Search: AppCompatActivity(), ItemsAdapter.ClickListener {
         when( itemsModal.name){
             "image1" ->
                 startActivity(Intent(this@Act6_Search, Act4_MyBooks::class.java))
+            else -> {
+                Toast.makeText(this, "No actions", Toast.LENGTH_LONG).show()
+            }
         }
     }
 

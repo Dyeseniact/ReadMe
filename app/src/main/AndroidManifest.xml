@@ -11,11 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReadMe">
-        <activity android:name=".Item2Activity"></activity>
-        <activity android:name=".Item1Activity" />
         <activity android:name=".Act_ConfirmarPago" />
         <activity android:name=".Act_Pagar" />
-        <activity android:name=".Act6_Search">
+        <activity android:name=".Act0_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,6 +28,7 @@
         <activity android:name=".Act5_Setting" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Act4_MyBooks" />
+        <activity android:name=".Act_Recover_Password" />
     </application>
 
 </manifest>

@@ -3,8 +3,8 @@
 
     <style name="text_input_login">
         <item name="android:layout_marginStart">32dp</item>
-        <item name="android:layout_marginEnd">32dp</item>
-        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:layout_marginTop">24dp</item>
         <item name="android:layout_width">256dp</item>
         <item name="android:layout_height">wrap_content</item>
 
@@ -19,7 +19,7 @@
 
     <style name="buttom_login">
         <item name="android:backgroundTint">@color/primary2</item>
-        <item name="android:layout_margin">32dp</item>
+        <item name="android:layout_margin">24dp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">256dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -100,5 +100,21 @@
         <item name="android:layout_marginBottom">8dp</item>
         <item name="android:paddingStart">56dp</item>
         <item name="android:paddingEnd">56dp</item>
+    </style>
+
+    <style name="edit_text_recover_password">
+        <item name="android:layout_width">320dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textCursorDrawable">@color/primary1</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="buttom_login_recover">
+        <item name="android:backgroundTint">@color/primary2</item>
+        <item name="android:layout_margin">32dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">256dp</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 </resources>

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import db.*
 import models.User
@@ -28,6 +29,7 @@ class Activity_act1_login : AppCompatActivity() {
         var password = findViewById<EditText>(R.id.editText_password)
         var btnLogin = findViewById<Button>(R.id.btn_login)
         var btnRegister = findViewById<Button>(R.id.btn_register)
+        var btnRecoverPassword = findViewById<TextView>(R.id.textView_pass_recover)
 
         btnLogin.setOnClickListener {
 
@@ -48,6 +50,12 @@ class Activity_act1_login : AppCompatActivity() {
             }else{
                 Toast.makeText(this,"Error, debes de llenar todos los campos", Toast.LENGTH_LONG).show()
             }
+        }
+
+        btnRecoverPassword.setOnClickListener {
+            val intent = Intent(this,Act_Recover_Password::class.java).apply{}
+            startActivity(intent)
+            finish()
         }
 
         btnRegister.setOnClickListener {
