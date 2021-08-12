@@ -8,16 +8,17 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isGone
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.bedu.readme.adapters.RecyclerAdapter
+import com.bedu.readme.adapters.myBooksCardAdapter
+import com.bedu.readme.models.myLiteratureCard
 import com.bedu.readme.models.LiteratureRV
 import me.ibrahimsn.lib.SmoothBottomBar
+import models.listArticle
 import models.listBook
 import java.util.ArrayList
 
@@ -50,29 +51,31 @@ class Act4_MyBooks : AppCompatActivity() {
         //Slider para libros
         val textBookView = findViewById<TextView>(R.id.textView_book)
         val bookView = findViewById<ViewPager2>(R.id.slider_books)
-        val bookSlider: MutableList<HomeCard> = ArrayList()
+        val bookSlider: MutableList<myLiteratureCard> = ArrayList()
 
-        val book1 = HomeCard()
-        book1.book_image = R.drawable.book1
+        val book1 = myLiteratureCard()
+        //Picasso.get().load(R.drawable.librodiscipulo).into(this.book)
+        //https://i.redd.it/3mkuta0m4c351.png
+        book1.book_image2 = "https://i.redd.it/3mkuta0m4c351.png"
         book1.downloads = "200k"
         bookSlider.add(book1)
 
-        val book2 = HomeCard()
+        val book2 = myLiteratureCard()
         book2.book_image = R.drawable.book2
         book2.downloads = "150k"
         bookSlider.add(book2)
 
-        val book3 = HomeCard()
+        val book3 = myLiteratureCard()
         book3.book_image = R.drawable.librodiscipulo
         book3.downloads = "140k"
         bookSlider.add(book3)
 
-        val book4 = HomeCard()
+        val book4 = myLiteratureCard()
         book4.book_image = R.drawable.book2
         book4.downloads = "130k"
         bookSlider.add(book4)
 
-        bookView.adapter = Act_HomeCardAdapter(bookSlider)
+        bookView.adapter = myBooksCardAdapter(bookSlider)
         bookView.clipToPadding = false
         bookView.clipChildren = false
         bookView.offscreenPageLimit = 3
@@ -88,14 +91,11 @@ class Act4_MyBooks : AppCompatActivity() {
         bookView.setPageTransformer(bookTransformer)
 
         val literature = arrayListOf<LiteratureRV>()
-        literature.add(LiteratureRV(listBook[0]!!.id, listBook[0]!!.title, listBook[0]!!.author, listBook[0]!!.genre, listBook[0]!!.price, "Book"))
-        literature.add(LiteratureRV(listBook[1]!!.id, listBook[1]!!.title, listBook[1]!!.author, listBook[1]!!.genre, listBook[1]!!.price, "Book"))
-        literature.add(LiteratureRV(listBook[2]!!.id, listBook[2]!!.title, listBook[2]!!.author, listBook[2]!!.genre, listBook[2]!!.price, "Book"))
-        literature.add(LiteratureRV(listBook[3]!!.id, listBook[3]!!.title, listBook[3]!!.author, listBook[3]!!.genre, listBook[3]!!.price, "Book"))
-        literature.add(LiteratureRV(listBook[4]!!.id, listBook[4]!!.title, listBook[4]!!.author, listBook[4]!!.genre, listBook[4]!!.price, "Book"))
-        literature.add(LiteratureRV(listBook[5]!!.id, listBook[5]!!.title, listBook[5]!!.author, listBook[5]!!.genre, listBook[5]!!.price, "Book"))
-        literature.add(LiteratureRV(listBook[6]!!.id, listBook[6]!!.title, listBook[6]!!.author, listBook[6]!!.genre, listBook[6]!!.price, "Book"))
-
+        for (i in 0 until 3){
+            val ip = i
+            val lit = listBook[ip]
+            literature.add(LiteratureRV(lit!!.id,lit.title,lit.author, lit.genre, lit.price, lit.image,"Book"))
+        }
         recyclerMiLiterature = findViewById(R.id.act4MyBooksRVMibiblioteca)
         recyclerMiLiterature.adapter = RecyclerAdapter(this, literature)
         recyclerMiLiterature.setHasFixedSize(true)
@@ -104,10 +104,17 @@ class Act4_MyBooks : AppCompatActivity() {
 
         recyclerMiLiterature.setOnScrollChangeListener { view, scrollx, scrolly, oldScrollx, oldScrolly ->
             if (  scrolly > oldScrolly && flagOne  ){
-                textBookView.visibility = View.GONE
                 bookView.visibility = View.GONE
                 flagOne = false
             }
+
+
+            if (  oldScrolly > scrolly  && textBookView.visibility == View.GONE   ){
+                textBookView.visibility = View.VISIBLE
+                bookView.visibility = View.VISIBLE
+                flagOne = true
+            }
+
 
         }
 

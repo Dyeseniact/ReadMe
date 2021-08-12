@@ -26,7 +26,7 @@ class ViewPagerRecyclerAdapter(val context:Context, val literature: ArrayList<Li
         fun bind(book: LiteratureRV){
             this.name.text = book?.title ?: "Loret"
             this.author.text = book?.author ?: "Lor"
-            Picasso.get().load(R.drawable.librodiscipulo).into(this.book)
+            if(book.image != "" ){ Picasso.get().load(book.image).into(this.book)  }
 
         }
     }

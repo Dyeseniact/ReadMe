@@ -19,6 +19,7 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="140dp"
+            android:id="@+id/rv_image"
             android:src="@drawable/librodiscipulo"
             />
         <TextView

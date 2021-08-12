@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bedu.readme">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReadMe">
-        <activity android:name=".Act_ConfirmarPago" />
+        <activity android:name=".Act_ConfirmarPago"></activity>
         <activity android:name=".Act_Pagar" />
         <activity android:name=".Act0_main">
             <intent-filter>
@@ -28,7 +28,6 @@
         <activity android:name=".Act5_Setting" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Act4_MyBooks" />
-        <activity android:name=".Act_Recover_Password" />
     </application>
 
 </manifest>

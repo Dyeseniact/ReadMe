@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_person"
+            android:title="@string/drawer.home" />
+    </group>
+
+    <item android:title="Cuenta">
+
+        <menu>
+
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_payment"
+                    android:icon="@drawable/payment"
+                    android:title="@string/drawer.payments" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/drawer.extra">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/info"
+                android:title="@string/drawer.about" />
+
+            <item
+                android:id="@+id/nav_privacy"
+                android:icon="@drawable/privacy"
+                android:title="@string/drawer.privacy" />
+        </menu>
+    </item>
+
+    <item android:title="Sesión">
+
+    <menu>
+
+        <group android:checkableBehavior="single">
+
+            <item
+                android:id="@+id/close_sesion"
+                android:icon="@drawable/ic_logout"
+                android:title="@string/drawer.logout" />
+        </group>
+    </menu>
+</item>
+
+</menu>

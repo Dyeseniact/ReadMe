@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Act_userCount">
+    <!-- Logo -->
+    <LinearLayout
+        android:id="@+id/act3HomeLogoLayoutTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/act3HomeLogoImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            style="@style/LogoTxV"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/act3HomeLogoImageView" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageEditProfile"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewlblEditProfile" />
+
+    <TextView
+        android:id="@+id/textViewlblEditProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="@string/EditProfile"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/textViewUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="12dp"
+        android:text="Usuario:"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editText_emailUpdate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageEditProfile" />
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Email:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUser"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editText_userName"
+        style="@style/edit_text_login"
+        android:layout_width="248dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageEditProfile" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInput_user"
+        style="@style/text_input_register"
+        android:layout_width="244dp"
+        android:layout_height="22dp"
+        android:hint="@string/text_user"
+        app:boxBackgroundColor="@color/neutral6"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_userName"
+        app:layout_constraintEnd_toEndOf="@+id/editText_userName"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/editText_userName"
+        app:layout_constraintTop_toTopOf="@+id/editText_userName"
+        app:layout_constraintVertical_bias="1.0">
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/editText_emailUpdate"
+        style="@style/edit_text_login"
+        android:layout_width="248dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInput_user" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInput_emailUpdate"
+        style="@style/text_input_register"
+        android:layout_width="244dp"
+
+        android:layout_height="22dp"
+        android:hint="@string/text_user"
+        app:boxBackgroundColor="@color/neutral6"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_emailUpdate"
+        app:layout_constraintEnd_toEndOf="@+id/editText_emailUpdate"
+        app:layout_constraintStart_toStartOf="@+id/editText_emailUpdate"
+        app:layout_constraintTop_toTopOf="@+id/editText_emailUpdate"
+        app:layout_constraintVertical_bias="1.0">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUpdate"
+        style="@style/buttom"
+        android:text="@string/text_btnUpdate"
+        app:cornerRadius="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon_arrow" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_cancelar"
+        style="@style/buttom"
+
+        android:layout_width="212dp"
+        android:layout_height="39dp"
+        android:text="@string/text_btnCancel"
+        app:cornerRadius="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdate" />
+
+    <ImageView
+        android:id="@+id/icon_arrow"
+        style="@style/icon_arrow"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_emailUpdate" />
+</androidx.constraintlayout.widget.ConstraintLayout>
