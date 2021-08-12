@@ -30,9 +30,9 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
     private lateinit var recyclerTop : RecyclerView
     private lateinit var recyclerRecommend : RecyclerView
 
-    private lateinit var homeButton: ImageView
-    private lateinit var settingButton: ImageView
-    private lateinit var bookButton: ImageView
+//    private lateinit var homeButton: ImageView
+//    private lateinit var settingButton: ImageView
+//    private lateinit var bookButton: ImageView
 
     private lateinit var btnSearch: ImageButton
 
@@ -70,13 +70,16 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         //aqui comenzaria la parte de la barra en donde el engrane despliega el menu
 
 
-//Aun por implementar el boton de buscar....
+//Aun por implementar el boton de buscar....Está dando error al llamar Act_Find y cierra
 
-//        btnSearch.setOnClickListener {
+        btnSearch.setOnClickListener {
 //            val intent = Intent(this,Act_Find::class.java)
 //            startActivity(intent)
 //            finish()
-//        }
+
+            Toast.makeText(this,"Aun no se ha implementado esta ventana",Toast.LENGTH_SHORT).show()
+
+        }
 
 
 
