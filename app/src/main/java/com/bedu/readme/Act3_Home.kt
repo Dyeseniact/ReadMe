@@ -177,6 +177,15 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
             startActivity(intent)
 
         }
+
+        if(item.itemId==R.id.nav_about){
+            val intent = Intent(this,Act_acercaDe::class.java)
+            startActivity(intent)
+        }
+        if(item.itemId==R.id.nav_privacy){
+            val intent = Intent(this,Act_privacy::class.java)
+            startActivity(intent)
+        }
         return false
     }
 
