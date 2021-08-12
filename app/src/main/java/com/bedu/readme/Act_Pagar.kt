@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bedu.readme.models.Validation
+import models.listBook
 
 //class Act_Pagar : AppCompatActivity() {
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +42,11 @@ class Act_Pagar : AppCompatActivity() {
     var monthTrue: Boolean = false
     var yearTrue: Boolean = false
 
+    //
+    private lateinit var txtProcederPago: TextView
+    private lateinit var  txtTitulo: TextView
+    private lateinit var txtPrecio: TextView
+
 
     //private var cvv by Delegates.notNull<Int>()
 
@@ -64,6 +70,16 @@ class Act_Pagar : AppCompatActivity() {
         txtcvv = findViewById(R.id.txt_cvv)
         txtmonth = findViewById(R.id.txt_month)
         txtyear = findViewById(R.id.txt_year)
+
+        txtProcederPago = findViewById(R.id.txtTitulo)
+        txtTitulo = findViewById(R.id.txtTitulo)
+        txtPrecio = findViewById(R.id.txtMontoPagar)
+
+
+//        Cambiar esto por la variable a partir de la compra: Titulo y precio.
+        txtTitulo.text = "Título: ${listBook[3]?.title}"
+        txtPrecio.text = "Monto a pagar: ${listBook[3]?.price} MXN"
+        //txtTitulo.text = "Título: ${tituloPagar}"
 
 
 //
@@ -186,4 +202,9 @@ class Act_Pagar : AppCompatActivity() {
 
 
     }
+
+    private fun Pagar(Titulo:String, price: Double) {
+        TODO("Not yet implemented")
+    }
 }
+

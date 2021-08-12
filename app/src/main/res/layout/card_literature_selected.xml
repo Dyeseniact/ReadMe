@@ -84,6 +84,8 @@
                     android:id="@+id/cardLiteratureSelectedButtonBuy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    style="@style/buttom"
                     android:text="@string/text_card_button_buy"
                     />
                 <Button
@@ -91,6 +93,7 @@
                     android:layout_marginLeft="40dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    style="@style/buttom"
                     android:text="@string/text_card_button_preview"/>
 
             </LinearLayout>

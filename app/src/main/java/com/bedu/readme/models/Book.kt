@@ -9,7 +9,8 @@ class Book(
     override var price: Double,
     override var stock: Int,
     override var favorite: Boolean=false,
-    override var discount: Int=0
+    override var discount: Int=0,
+    var image: String = ""
 ):Product() {
 
 init {

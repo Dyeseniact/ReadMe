@@ -4,16 +4,24 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import me.ibrahimsn.lib.SmoothBottomBar
+import models.listBook
 
 
-private lateinit var smoothBottomBar: SmoothBottomBar
 @SuppressLint("StaticFieldLeak")
-private lateinit var txtConfirm: TextView
+
+private lateinit var txtConfirmacion: TextView
+private lateinit var txtMontoCobrado: TextView
+private lateinit var imDone: ImageView
+
+private lateinit var btnAccept: Button
+
 
 
 class Act_ConfirmarPago : AppCompatActivity() {
@@ -23,33 +31,22 @@ class Act_ConfirmarPago : AppCompatActivity() {
 
 
 
-        txtConfirm = findViewById(R.id.txtConfirmacion)
+        txtConfirmacion = findViewById(R.id.txtConfirmacion)
+        txtMontoCobrado = findViewById(R.id.txtMontoCobrado)
+        txtMontoCobrado.text = "Se realizó un cobro de ${listBook[3]?.price} MXN"
 
-        smoothBottomBar = findViewById(R.id.act3HomeFooter)
+        imDone = findViewById(R.id.imgDone)
 
 
+        btnAccept = findViewById(R.id.btnAccept)
 
 
-
-        smoothBottomBar.setOnItemSelectedListener {
-            if(it == 0){
-                //Agregar los cambios hacia las pantallas
-
-//                val intent = Intent(this,Act3_Home::class.java)
-//                startActivity(intent)
-//                finish()
-                Toast.makeText(this,"Aquí ejecuto Mis Libros", Toast.LENGTH_SHORT).show()
-            }
-            if (it == 1){
-//                Toast.makeText(this,"Aquí ejecuto Tienda", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, Act2_SelectsPreferredGenres::class.java)
-                startActivity(intent)
-                finish()
-            }
-            if (it == 2){
-                Toast.makeText(this,"Aquí ejecuto el menu de ajustes", Toast.LENGTH_SHORT).show()
-            }
+        btnAccept.setOnClickListener {
+            val intent = Intent(this,Act3_Home::class.java)
+            startActivity(intent)
+            finish()
         }
+
 
 
 
