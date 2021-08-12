@@ -77,8 +77,14 @@ class Act_Pagar : AppCompatActivity() {
 
 
 //        Cambiar esto por la variable a partir de la compra: Titulo y precio.
-        txtTitulo.text = "Título: ${listBook[3]?.title}"
-        txtPrecio.text = "Monto a pagar: ${listBook[3]?.price} MXN"
+
+        var compra = this.getIntent().extras
+        var Titulo: String? = compra!!.getString("Titulo")
+        var Precio: String? = compra!!.getString("Precio")
+
+
+        txtTitulo.text = "Título:  ${Titulo}"
+        txtPrecio.text = "Monto a pagar: ${Precio} MXN"
         //txtTitulo.text = "Título: ${tituloPagar}"
 
 
@@ -93,7 +99,7 @@ class Act_Pagar : AppCompatActivity() {
 
 
 
-        txtcardnumber!!.addTextChangedListener(object : TextWatcher {
+        txtcardnumber.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 if (s.length == 0) {
@@ -104,7 +110,7 @@ class Act_Pagar : AppCompatActivity() {
             override fun afterTextChanged(s: Editable) {
                 val text = txtcardnumber.text.toString()
                 if (s.length == 0) {
-                    txtcardnumber!!.setBackgroundResource(R.drawable.border_error)
+                    txtcardnumber.setBackgroundResource(R.drawable.border_error)
                     tarjetaTrue = false
                 }
                 if (validation!!.luhn(text)) {

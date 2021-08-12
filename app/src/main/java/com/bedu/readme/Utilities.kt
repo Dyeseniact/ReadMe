@@ -1,16 +1,21 @@
 package com.bedu.readme
 
+import android.app.Application
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat.startActivity
 import com.bedu.readme.models.LiteratureRV
 import com.flaviofaria.kenburnsview.KenBurnsView
+import java.security.AccessController.getContext
 
 
 fun Context.dialog(title:String,message:String, context: Context){
@@ -40,7 +45,7 @@ fun diaglog(context: Context, inflater: LayoutInflater, literature: LiteratureRV
     //Modificaci[on de los componentes
     textViewTitle.text = literature.title
     textViewAuthor.text = literature.author
-    textViewPrice.text = "$ ${literature.price}"
+    textViewPrice.text = "${literature.price}"
 
     //Creación del cuadro de diálogo
     val builder = AlertDialog.Builder(context)
@@ -48,12 +53,42 @@ fun diaglog(context: Context, inflater: LayoutInflater, literature: LiteratureRV
     val alertDialog = builder.create()
     alertDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
+
+
+
+
+
+
     //Acciones de los botones que afectan al cuadro de diálogo
-    buttonBuy.setOnClickListener{ showToast(context, "Preciono el botón comprar") }
+    buttonBuy.setOnClickListener{
+        val Compra = Bundle()
+//        val Precio = Bundle()
+
+       Compra.putString("Titulo",literature.title)
+       Compra.putString("Precio", "${literature.price}")
+
+        val intent = Intent(context,Act_Pagar::class.java).apply {
+            putExtras(Compra)
+
+
+        }
+        context.applicationContext.startActivity(intent)
+
+
+
+    }
+
+
+
+
+
+
+
     buttonPreview.setOnClickListener { showToast(context, "Preciono el botón vista previa")}
 
     alertDialog.show()
 }
+
 
 
 fun showToast(context: Context, text:String){
