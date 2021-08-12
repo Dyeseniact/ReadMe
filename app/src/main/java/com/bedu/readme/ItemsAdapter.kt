@@ -7,8 +7,11 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bedu.readme.ItemsAdapter.ItemsAdapterVH
 
-class ItemsAdapter: RecyclerView.Adapter<ItemsAdapter.ItemsAdapterVH>() {
+class ItemsAdapter
+    (var clickListener: ClickListener)
+    : RecyclerView.Adapter<ItemsAdapterVH>() {
 
     var itemsModalList = ArrayList<ItemsModal>()
 
@@ -30,6 +33,11 @@ class ItemsAdapter: RecyclerView.Adapter<ItemsAdapter.ItemsAdapterVH>() {
         holder.name.text = itemsModal.name
         holder.desc.text = itemsModal.desc
         holder.image.setImageResource(itemsModal.image)
+
+        holder.itemView.setOnClickListener{
+            clickListener.ClickedItem(itemsModal)
+        }
+
     }
 
     class ItemsAdapterVH(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -42,6 +50,6 @@ class ItemsAdapter: RecyclerView.Adapter<ItemsAdapter.ItemsAdapterVH>() {
     }
 
     interface ClickListener {
-        fun ClickItem()
+        fun ClickedItem(itemsModal: ItemsModal)
     }
 }

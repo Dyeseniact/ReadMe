@@ -1,16 +1,18 @@
 package com.bedu.readme
 
+
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.widget.SearchView
-import android.widget.Toast
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 
-class Act6_Search: AppCompatActivity(),{
+
+class Act6_Search: AppCompatActivity(), ItemsAdapter.ClickListener {
+
+    private lateinit var recyclerView : RecyclerView
 
     val imagesName = arrayOf(
         ItemsModal("image1", "image1 desc", R.drawable.book1),
@@ -18,10 +20,13 @@ class Act6_Search: AppCompatActivity(),{
         ItemsModal("image3", "image3 desc", R.drawable.magazine1),
         ItemsModal("image4", "image4 desc", R.drawable.magazine3),
         ItemsModal("image5", "image5 desc", R.drawable.magazine2),
+        ItemsModal("image6", "image6 desc", R.drawable.librodiscipulo),
+        ItemsModal("image4", "image4 desc", R.drawable.magazine3),
+        ItemsModal("image5", "image5 desc", R.drawable.magazine2),
         ItemsModal("image6", "image6 desc", R.drawable.librodiscipulo)
     )
 
-    val itemModalsList = ArrayList<ItemsModal>()
+    private val itemModalsList = ArrayList<ItemsModal>()
     var itemsAdapter: ItemsAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,17 +37,25 @@ class Act6_Search: AppCompatActivity(),{
             itemModalsList.add(items)
         }
 
-        itemsAdapter = ItemsAdapter()
+        itemsAdapter = ItemsAdapter(this)
         itemsAdapter!!.setData(itemModalsList)
 
-        recyclerView.LayoutManager = LinearLayoutManager(this)
-        recyclerView.getDefaultSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
         recyclerView.adapter = itemsAdapter
 
 
 
     }
 
+    override fun ClickedItem(itemsModal: ItemsModal) {
+        Log.e("TAG",itemsModal.name)
+
+        when( itemsModal.name){
+            "image1" ->
+                startActivity(Intent(this@Act6_Search, Act4_MyBooks::class.java))
+        }
+    }
 
 
 }
