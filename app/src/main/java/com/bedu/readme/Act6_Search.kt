@@ -18,15 +18,19 @@ class Act6_Search: AppCompatActivity(), ItemsAdapter.ClickListener {
     private lateinit var recyclerView : RecyclerView
 
     val imagesName = arrayOf(
-        ItemsModal("image1", "image1 desc", R.drawable.book1),
-        ItemsModal("image2", "image2 desc", R.drawable.book2),
-        ItemsModal("image3", "image3 desc", R.drawable.magazine1),
-        ItemsModal("image4", "image4 desc", R.drawable.magazine3),
-        ItemsModal("image5", "image5 desc", R.drawable.magazine2),
-        ItemsModal("image6", "image6 desc", R.drawable.librodiscipulo),
-        ItemsModal("image4", "image4 desc", R.drawable.magazine3),
-        ItemsModal("image5", "image5 desc", R.drawable.magazine2),
-        ItemsModal("image6", "image6 desc", R.drawable.librodiscipulo)
+        ItemsModal("Bajo la misma estrella", "John Green", R.drawable.book1),
+        ItemsModal("1984", "George Orwell", R.drawable.book2),
+        ItemsModal("Historia", "National Geographic", R.drawable.magazine1),
+        ItemsModal("Arte", "National Geographic", R.drawable.magazine3),
+        ItemsModal("Historia Neron", "National Geographic", R.drawable.magazine2),
+        ItemsModal("El discipulo", "Angelo Scotti", R.drawable.librodiscipulo),
+        ItemsModal("Bajo la misma estrella", "John Green", R.drawable.book1),
+        ItemsModal("1984", "George Orwell", R.drawable.book2),
+        ItemsModal("Historia", "National Geographic", R.drawable.magazine1),
+        ItemsModal("Arte", "National Geographic", R.drawable.magazine3),
+        ItemsModal("Historia Neron", "National Geographic", R.drawable.magazine2)
+
+
     )
 
     private val itemModalsList = ArrayList<ItemsModal>()
@@ -35,6 +39,8 @@ class Act6_Search: AppCompatActivity(), ItemsAdapter.ClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act6_search)
+
+
 
         for(items in imagesName){
             itemModalsList.add(items)
@@ -64,11 +70,11 @@ class Act6_Search: AppCompatActivity(), ItemsAdapter.ClickListener {
         }
     }
 
-    override fun onCreateOptionsMenu(menu_search: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
-        menuInflater.inflate(R.menu.menu_search, menu_search)
+        menuInflater.inflate(R.menu.menu_search, menu)
 
-        val menuItem = menu_search!!.findItem(R.id.searchView)
+        val menuItem = menu!!.findItem(R.id.searchView)
 
         val searchView = menuItem.actionView as SearchView
 
@@ -89,8 +95,11 @@ class Act6_Search: AppCompatActivity(), ItemsAdapter.ClickListener {
 
         })
 
-        return true
+        return true;
     }
 
 
+
 }
+
+

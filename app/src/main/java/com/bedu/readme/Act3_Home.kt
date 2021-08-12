@@ -1,9 +1,12 @@
 package com.bedu.readme
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -25,6 +28,7 @@ import com.bedu.readme.adapters.RecyclerAdapter
 import com.bedu.readme.adapters.ViewPagerRecyclerAdapter
 import com.bedu.readme.models.LiteratureRV
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import db.listUsr
 import db.createDBBooks
 import db.listUsr
@@ -49,11 +53,18 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
 
     private lateinit var smoothBottomBar: SmoothBottomBar
 
+    private lateinit var sharedPreferences : SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
+
     @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_act3_home)
+
+
+        sharedPreferences = getSharedPreferences("Preferencias", Context.MODE_PRIVATE)
+        editor = sharedPreferences.edit()
 
         //Se infla la vista
         var navigation = findViewById<NavigationView>(R.id.nav_view)
@@ -93,10 +104,13 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
                 finish()
             }
             if (it ==2){
-                drawerLayout.openDrawer(Gravity.START)
-                println("el user es ${listUsr[currentCount]?.userName} la cuenta va en $currentCount")
-                correo.text= listUsr[currentCount]?.getEmail()
-                name.text= listUsr[currentCount]?.userName
+                Handler().postDelayed({
+                    smoothBottomBar.itemActiveIndex = 1
+                    drawerLayout.openDrawer(Gravity.START)
+                    println("el user es ${listUsr[currentCount]?.userName} la cuenta va en $currentCount")
+                    correo.text= userLogin?.getEmail()
+                    name.text= userLogin?.userName
+                }, 200)
             }
         }
 
@@ -128,6 +142,10 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         val literatureGenres = literatureRecommend(userLogin)
         recyclerTop = findViewById(R.id.act3HomeRecyclerView2)
         selectGenreButton = findViewById(R.id.act3HomeButtonSelectGenred)
+        selectGenreButton.setOnClickListener {
+            val intent = Intent(this,Act2_SelectsPreferredGenres::class.java)
+            startActivity(intent)
+        }
         if(!literatureGenres.isEmpty()){
             recyclerTop.visibility = View.VISIBLE
             selectGenreButton.visibility = View.GONE
@@ -185,6 +203,13 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         if(item.itemId==R.id.nav_privacy){
             val intent = Intent(this,Act_privacy::class.java)
             startActivity(intent)
+        }
+        if(item.itemId==R.id.close_sesion){
+            showToast(this, "Nos vemos")
+            editor.clear().apply()
+            val intent = Intent(this,Act1_login::class.java)
+            startActivity(intent)
+            finish()
         }
         return false
     }

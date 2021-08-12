@@ -13,7 +13,7 @@
         android:theme="@style/Theme.ReadMe">
         <activity android:name=".Act_ConfirmarPago"></activity>
         <activity android:name=".Act_Pagar" />
-        <activity android:name=".Act6_Search">
+        <activity android:name=".Act0_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Act1_login" />
-        <activity android:name=".Act2_signin" />
+        <activity android:name=".Act2_Signin" />
         <activity android:name=".Act2_SelectsPreferredGenres" />
         <activity android:name=".Act3_Home" />
         <activity android:name=".Act4_mybook" />
@@ -29,6 +29,9 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Act4_MyBooks" />
         <activity android:name=".Act_Recover_Password" />
+        <activity android:name=".Act6_Search"
+            android:theme="@style/Theme.ReadMe2"/>
+
     </application>
 
 </manifest>

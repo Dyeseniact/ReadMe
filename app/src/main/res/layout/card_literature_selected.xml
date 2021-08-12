@@ -39,6 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Loret"
+                android:textColor="@color/neutral2"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 style="@style/TxvTitle1"
@@ -50,6 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
+                android:textColor="@color/neutral2"
                 android:layout_marginHorizontal="10sp"
                 android:text="@string/Loret"/>
 
@@ -59,6 +61,7 @@
                 android:layout_above="@+id/cardLiteratureTextPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/neutral2"
                 android:text="@string/Loret_Ipsum" />
 
             <TextView
@@ -68,6 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:textColor="@color/neutral2"
                 android:textSize="24sp"
                 android:text="@string/Loret" />
 

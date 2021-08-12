@@ -9,10 +9,10 @@ fun createDBAdmins(){
     //Crea una lista con 4 administradores que están predeterminados
     var cambio:Boolean=false
     listUsr[countUsers]= User(countUsers+1,"Erick","ErickBedu",
-        "1234erick","erick@gmail.com","admin")
+        "1234erick","erick@gmail.com","user")
     countUsers++
     listUsr[countUsers]= User(countUsers+1,"Yess","YessBedu",
-        "1234yess","yess@gmail.com","admin")
+        "1234yess","yess@gmail.com","user")
     countUsers++
     listUsr[countUsers]= User(countUsers+1,"Janner","JannerBedu",
         "1234janner","janner@gmail.com","user",

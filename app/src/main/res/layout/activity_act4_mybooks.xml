@@ -88,6 +88,7 @@
         android:layout_alignParentBottom="true"
         app:activeItem="0"
         app:iconSize="24dp"
+        app:backgroundColor="@color/neutralBack"
         app:iconTint="@color/neutral3"
         app:iconTintActive="@color/primary1"
         app:indicatorColor="#ECECEC"

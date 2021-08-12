@@ -1,5 +1,6 @@
 package com.bedu.readme
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -9,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import db.*
 import models.User
 
@@ -19,6 +21,9 @@ var selection = 100
 lateinit var currentUser: String
 lateinit var currentEmail: String
 var currentCount: Int=0
+
+var loginactive: Activity? = null
+
 class Act1_login : AppCompatActivity() {
     private lateinit var sharedPreferences : SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
@@ -82,9 +87,9 @@ class Act1_login : AppCompatActivity() {
         }
 
         btnRegister.setOnClickListener {
-            val intent = Intent(this,Act2_signin::class.java).apply{}
+            val intent = Intent(this,Act2_Signin::class.java).apply{}
             startActivity(intent)
-            finish()
+            loginactive = this
         }
     }
 
