@@ -17,7 +17,7 @@ class Act2_signin : AppCompatActivity() {
         setContentView(R.layout.activity_act2_signin)
 
         val name = findViewById<TextView>(R.id.editText_name_register)
-        val userName = findViewById<TextView>(R.id.editText_userName_register)
+        val userName = findViewById<TextView>(R.id.editText_emailUpdate)
         val email = findViewById<TextView>(R.id.editText_email_register)
         val password = findViewById<TextView>(R.id.editText_password_register)
         val phone = findViewById<TextView>(R.id.editText_phone_register)

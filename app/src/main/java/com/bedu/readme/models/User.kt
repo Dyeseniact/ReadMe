@@ -12,4 +12,13 @@ class User(id:Int, nombre:String, userName:String, password:String, private  var
     fun getEmail():String = email
     fun getTypeAccount():String = typeAccount
 
+    fun setEmail(email:String){
+        this.email = email
+    }
+
+    fun ponerNombre(nombre:String){
+        this.userName = nombre
+    }
+
+
 }

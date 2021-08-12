@@ -14,7 +14,9 @@ lateinit var userLogin: User
 var runProgram = true
 var loginAnswer = ""
 var selection = 100
-
+lateinit var currentUser: String
+lateinit var currentEmail: String
+var currentCount: Int=0
 class Activity_act1_login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,6 +81,7 @@ class Activity_act1_login : AppCompatActivity() {
             if(listUsr[i]?.getTypeAccount()== "user" && listUsr[i]?.getEmail() == email){
                 if( listUsr[i]?.getPassword() == password){
                     userLogin = listUsr[i]!!
+                    currentCount=i
                     return "ok"
                 }else{
                     return "badPassword"
