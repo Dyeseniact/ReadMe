@@ -133,13 +133,40 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/textView_terms"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/text_read_terms"
+                android:textSize="14sp"
+                android:textColor="@color/primary1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText_phone"
+                android:clickable="true"/>
+
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/check_register"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_terms"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/gray"
+                android:text="@string/text_accept_terms"
+                android:buttonTint="@color/primary2"
+                />
+
             <ImageView
                 android:id="@+id/icon_arrow"
                 style="@style/icon_arrow"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+                app:layout_constraintTop_toBottomOf="@id/check_register" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_register_user"
