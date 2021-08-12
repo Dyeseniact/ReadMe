@@ -35,6 +35,8 @@ class Act1_login : AppCompatActivity() {
         editor = sharedPreferences.edit()
 
         if(sharedPreferences.getBoolean("userLog",false)){
+
+            currentCount = sharedPreferences.getInt("userId",1)-1
             userLogin = User(
                 sharedPreferences.getInt("userId",5000),
                 sharedPreferences.getString("userName","")!!,
