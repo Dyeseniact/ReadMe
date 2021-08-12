@@ -28,6 +28,8 @@
     <string name="act3txv1">Te podría interesar</string>
     <string name="act3txv2">Lo más buscados</string>
 
+    <string name="act3Home_text_button_selectGenre">Selecciona tus géneros preferidos para mostrarte titulos de tu interés</string>
+
     <string name="navigaton_Text_myLiterature">Biblioteca</string>
     <string name="navigaton_Text_home">Tienda</string>
     <string name="navigaton_Text_settings">Ajustes</string>
