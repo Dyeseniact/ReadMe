@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:openDrawer="start"
+    android:fitsSystemWindows="true"
+    tools:context=".Act3_1_HomeMenu">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Act3_Home">
+
+        <!-- Logo -->
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:id="@+id/act3HomeLogoLayoutTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/act3HomeLogoImageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo" />
+
+            <TextView
+                style="@style/LogoTxV"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/act3HomeLogoImageView"
+                />
+
+        </LinearLayout>
+
+
+
+
+        <!-- Aquí va el cuerpo del activity -->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/act3HomeLogoLayoutTopBar"
+            android:layout_marginHorizontal="8dp"
+            android:layout_above="@+id/act3HomeFooter">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/act3HomeTextview"
+                    style="@style/TxvTitle1"
+                    android:layout_marginTop="12dp"
+                    android:textSize="32dp"
+                    android:text="@string/act3txv"/>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/act3HomeViewPagerBook"
+                    android:layout_width="match_parent"
+                    style="@style/Slider_home"/>
+
+
+                <TextView
+                    android:id="@+id/act3HomeTextview1"
+                    style="@style/TxvTitle1"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/act3txv1"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/act3HomeRecyclerView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/card_rv_book"/>
+                <Button
+                    android:id="@+id/act3HomeButtonSelectGenred"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/act3Home_text_button_selectGenre"
+                    android:visibility="gone"
+                    style="@style/buttom"/>
+
+                <TextView
+                    android:id="@+id/act3HomeTextview2"
+                    style="@style/TxvTitle1"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    android:text="@string/act3txv2"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/act3HomeRecyclerView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    tools:listitem="@layout/card_rv_book"/>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Botón flotante -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/act3HomeBottonSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"
+            android:backgroundTint="@color/neutral6"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_alignRight="@+id/act3HomeFooter"
+            android:layout_alignTop="@+id/act3HomeLogoLayoutTopBar"
+            />
+
+        <!-- Barra de navegación inferior-->
+
+        <LinearLayout
+            android:id="@+id/act4MyBooksSepartor"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/neutral3"
+            android:orientation="vertical"
+            android:layout_above="@+id/act3HomeFooter"/>
+
+        <me.ibrahimsn.lib.SmoothBottomBar
+            android:id="@+id/act3HomeFooter"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            app:iconSize="24dp"
+            app:backgroundColor="@color/neutralBack"
+            app:iconTint="@color/neutral3"
+            app:iconTintActive="@color/primary1"
+            app:indicatorColor="#ECECEC"
+            app:indicatorRadius="40dp"
+            app:menu="@menu/navigation_menu"
+            app:textColor="@color/primary1"
+            app:textSize="16sp"
+            app:activeItem="1"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        app:headerLayout="@layout/drawer_header"
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        app:menu="@menu/drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
