@@ -30,19 +30,21 @@ Nuestra plicación permite:
 
 ### Flujo de nuestra app y diseño de pantallas
 
-Flujo de ReadMe
+**Flujo de ReadMe:**
+
 ![flujo_app_readme](https://user-images.githubusercontent.com/73143272/129305794-16a5b9db-5b4e-4137-b537-02491473de19.gif)
 
-Guía de estilos:
+**Guía de estilos:**
 ![Guia_Readme](https://user-images.githubusercontent.com/73143272/129305905-3c32f80f-b8f5-4b5a-aab4-abaffd395653.PNG)
 
-Mockups:
+**Mockups:**
 ![Mockups_v2](https://user-images.githubusercontent.com/73143272/129305846-a2e82be6-e673-4b62-bcde-136813e86546.PNG)
 
-Link a Figma para ver los mockups y guía de diseño: https://www.figma.com/file/mD1VCkEupTsVIbZABiBMhQ/ReadMe-Proyecto-Final?node-id=1%3A778
+### Link a Figma para ver los mockups y guía de diseño: 
+https://www.figma.com/file/mD1VCkEupTsVIbZABiBMhQ/ReadMe-Proyecto-Final?node-id=1%3A778
 
 ### Link al video con la explicación:
 https://drive.google.com/drive/folders/1efWPLVWTESESuZbQhw2IFvBSDDvVllxq?usp=sharing
 
-### Bases del proyecto
-Documentación del proyecto: https://docs.google.com/document/d/1HAIOhdTf23FnROBnaDLCuYn388j2RUrg4fD97l-wLdQ/edit?usp=sharing
+### Link a bases del proyecto
+https://docs.google.com/document/d/1HAIOhdTf23FnROBnaDLCuYn388j2RUrg4fD97l-wLdQ/edit?usp=sharing
