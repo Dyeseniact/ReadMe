@@ -83,7 +83,6 @@ class Act1_login : AppCompatActivity() {
         btnRecoverPassword.setOnClickListener {
             val intent = Intent(this,Act_Recover_Password::class.java).apply{}
             startActivity(intent)
-            finish()
         }
 
         btnRegister.setOnClickListener {

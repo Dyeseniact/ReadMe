@@ -25,6 +25,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.bedu.readme.adapters.RecyclerAdapterShowBooksHorizontal
 import com.bedu.readme.adapters.ViewPagerShowBooksRecyclerAdapter
 import com.bedu.readme.models.LiteratureRV
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import db.listUsr
 import me.ibrahimsn.lib.SmoothBottomBar
@@ -51,6 +52,8 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
     private lateinit var sharedPreferences : SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
 
+    private lateinit var search: FloatingActionButton
+
     @SuppressLint("WrongConstant")
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,6 +72,14 @@ class Act3_Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         var correo: TextView = viewNav.findViewById(R.id.emailHeader)
         var name:TextView = viewNav.findViewById(R.id.userHeader)
         var imagen:ImageView = viewNav.findViewById(R.id.imageHeader)
+
+        search = findViewById(R.id.act3HomeBottonSearch)
+
+        search.setOnClickListener {
+            val intent = Intent(this,Act6_Search::class.java)
+            startActivity(intent)
+
+        }
 
 
         when(currentCount){

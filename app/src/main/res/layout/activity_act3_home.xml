@@ -111,11 +111,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_search"
-        android:backgroundTint="@color/neutral6"
+        android:backgroundTint="@color/primary2"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="20dp"
         android:layout_alignRight="@+id/act3HomeFooter"
-        android:layout_alignTop="@+id/act3HomeLogoLayoutTopBar"
+        android:layout_above="@+id/act4MyBooksSepartor"
         />
 
     <!-- Barra de navegación inferior-->

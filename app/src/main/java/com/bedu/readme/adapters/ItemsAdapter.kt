@@ -1,14 +1,22 @@
-package com.bedu.readme
+package com.bedu.readme.adapters
 
+import android.app.Activity
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
-import com.bedu.readme.ItemsAdapter.ItemsAdapterVH
+import com.bedu.readme.models.ItemsModal
+import com.bedu.readme.R
+import com.bedu.readme.adapters.ItemsAdapter.ItemsAdapterVH
+import com.bedu.readme.diaglog
+import com.bedu.readme.models.LiteratureRV
+import com.squareup.picasso.Picasso
 
 class ItemsAdapter
-    (var clickListener: ClickListener)
+    (val context: Context,
+     val activity: Activity)
     : RecyclerView.Adapter<ItemsAdapterVH>(), Filterable {
 
     var itemsModalList = ArrayList<ItemsModal>()
@@ -31,12 +39,21 @@ class ItemsAdapter
     override fun onBindViewHolder(holder: ItemsAdapterVH, position: Int) {
 
         val itemsModal = itemsModalList[position]
-        holder.name.text = itemsModal.name
-        holder.desc.text = itemsModal.desc
-        holder.image.setImageResource(itemsModal.image)
+        holder.name.text = itemsModal.title
+        holder.desc.text = itemsModal.author
+        Picasso.get().load(itemsModal.image).into(holder.image)
+
 
         holder.itemView.setOnClickListener{
-            clickListener.ClickedItem(itemsModal)
+            diaglog(context, activity, LayoutInflater.from(activity), LiteratureRV(
+                itemsModal.id,
+                itemsModal.title,
+                itemsModal.author,
+                itemsModal.genre,
+                itemsModal.price,
+                itemsModal.image,
+                itemsModal.typeLiteraure
+            ))
         }
 
     }
@@ -63,12 +80,12 @@ class ItemsAdapter
                     filterResult.values = itemsModalListFilter
 
                 }else {
-                    var searchChr = charSequence.toString().toLowerCase()
+                    var searchChr = charSequence.toString()
 
                     val itemModal = ArrayList<ItemsModal>()
 
                     for(item in itemsModalListFilter){
-                        if(item.name.contains(searchChr) || item.desc.contains(searchChr)){
+                        if(item.title.contains(searchChr) || item.author.contains(searchChr)){
                             itemModal.add(item)
                         }
                     }

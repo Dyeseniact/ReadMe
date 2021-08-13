@@ -24,6 +24,7 @@ import com.bedu.readme.adapters.RecyclerAdapterShowBooksHorizontal
 import com.bedu.readme.adapters.ViewPagerShowBooksRecyclerAdapter
 import com.bedu.readme.models.myLiteratureCard
 import com.bedu.readme.models.LiteratureRV
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import db.listUsr
 import com.google.android.material.navigation.NavigationView
 import db.listUsr
@@ -39,6 +40,8 @@ class Act4_MyBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var smoothBottomBar: SmoothBottomBar
     private lateinit var recyclerMiLiterature: RecyclerView
     private lateinit var btnSearch: ImageButton
+
+    private lateinit var search: FloatingActionButton
 
     var flagOne = true
 
@@ -57,6 +60,13 @@ class Act4_MyBooks : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         var name:TextView = viewNav.findViewById(R.id.userHeader)
         var imagen: ImageView = viewNav.findViewById(R.id.imageHeader)
 
+        search = findViewById(R.id.act4HomeBottonSearch)
+
+        search.setOnClickListener {
+            val intent = Intent(this,Act6_Search::class.java)
+            startActivity(intent)
+
+        }
 
         when(currentCount){
             0->imagen.setImageResource(R.drawable.erick)
