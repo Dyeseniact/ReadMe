@@ -142,17 +142,17 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ciencias Sociales y Económicas" />
+                        android:text="Ciencias Sociales" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Físico Matemáticas y Ciencias de la Tierra" />
+                        android:text="Físico Matemáticas " />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Medicina y Ciencias de la Salud" />
+                        android:text="Ciencias de la Salud" />
                 </LinearLayout>
             </LinearLayout>
 
