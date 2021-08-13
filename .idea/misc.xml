@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/genaro.marcos/AndroidStudioProjects/ReadMe/app/src/free/res/layout/activity_act1_login.xml" value="0.2046875" />
+        <entry key="..\:/Users/genaro.marcos/AndroidStudioProjects/ReadMe/app/src/free/res/layout/activity_act3_home.xml" value="0.2046875" />
         <entry key="..\:/Users/genaro.marcos/AndroidStudioProjects/ReadMe/app/src/main/res/drawable/home.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/genaro.marcos/AndroidStudioProjects/ReadMe/app/src/main/res/drawable/ic_foot_readbook.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/genaro.marcos/AndroidStudioProjects/ReadMe/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
@@ -34,6 +36,7 @@
         <entry key="..\:/Users/genaro.marcos/AndroidStudioProjects/ReadMe/app/src/main/res/menu/drawer_header.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/genaro.marcos/AndroidStudioProjects/ReadMe/app/src/main/res/menu/drawer_menu.xml" value="0.4" />
         <entry key="..\:/Users/genaro.marcos/AndroidStudioProjects/ReadMe/app/src/main/res/menu/navigation_menu.xml" value="0.4" />
+        <entry key="..\:/Users/genaro.marcos/AndroidStudioProjects/ReadMe/app/src/paid/res/layout/activity_act3_home.xml" value="0.2046875" />
       </map>
     </option>
   </component>
